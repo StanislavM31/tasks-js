@@ -4,4 +4,12 @@
 */
 
 let a = +prompt('введите число');
+let x =  Math.sqrt(a);
+if(x%Math.floor(x) == 0){
+
+    console.log(x,'без точки');
+} else{
+    console.log(Math.floor(x),'с точкой');
+}
+
 

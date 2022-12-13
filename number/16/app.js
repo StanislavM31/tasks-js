@@ -5,4 +5,5 @@
 
 let a = +prompt('введите число');
 let b = Math.sqrt(a).toFixed(2);
+/* .toFixed(2) - до двух знаков после запятой */
 console.log( b);

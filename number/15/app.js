@@ -5,10 +5,10 @@
 
 let a = +prompt('введите число лет');
 
-if(a>18 && a<41){
-    console.log('молодость')
-} else if( 40<a<101){
-    console.log('зрелость')
-}else if(a<=18 || a<=0){
-    console.log('детство')
+if(-1<a && a<=18){
+    console.log('детство');
+}else if(a>18 && a<41){
+    console.log('молодость');
+} else if( 40<a && a<101){
+    console.log('зрелость');
 } else console.log('некоректный ввод')
