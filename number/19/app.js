@@ -4,7 +4,26 @@
 ax^2 + bx + c = 0
 Если уравнение имеет два корня, то следует вывести их в порядке возра
 */
+let a = +prompt('введите число a');
+let b = +prompt('введите число b');
+let c = +prompt('введите число c');
+let D = b*b - 4*a*c;
+let x1;
+let x2;
+if(D<0){
+    console.log('нет действительных корней');
+} else if(D==0){
+    x1 = -(b/2*a);
+    console.log(x1);
+} else {
+    x1= -b + (Math.sqrt(D))/2*a;
+    x2= -b - (Math.sqrt(D))/2*a;
+    if (x1 > x2){
+        console.log(`меньший корень: ${x2} \nбОльший корень: ${x1} `);
+    } else {
+        console.log(`меньший корень: ${x1} \nбОльший корень: ${x2}`);
+    }
 
-let D;
+}
 
 
