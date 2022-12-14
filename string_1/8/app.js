@@ -8,23 +8,39 @@ const m = +prompt("введите # месяца");
 
 if (m === 12 || m === 1 || m === 3) {
   console.log("зима");
-} else if ( 2< m && m < 6) {
+} else if (2 < m && m < 6) {
   console.log("весна");
-} else if ( 5< m && m < 9) {
+} else if (5 < m && m < 9) {
   console.log("лето");
-} else if ( 8< m && m < 12) {
+} else if (8 < m && m < 12) {
   console.log("осень");
 } else {
-    console.log(`некоректный ввод`);
+  console.log(`некоректный ввод`);
 }
 
 switch (m) {
-    case value:
-    case value:
-    case value:
+  case 1:
+  case 2:
+  case 12:
+    console.log('зима');
+    break;
+  case 3:
+  case 4:
+  case 5:
+    console.log('весна');
+    break;
+  case 6:
+  case 7:
+  case 8:
+    console.log('лето');
+    break;
+  case 9:
+  case 10:
+  case 11:
+    console.log('осень');
+    break;
 
-        break;
-
-    default:
-        break;
+  default:
+    console.log('некорректный ввод');
+    break;
 }

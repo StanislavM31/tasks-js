@@ -1,6 +1,5 @@
-/* Пользователь вводит с клавиатуры 2 числа: основание степени и показатель
-степени. Необходимо возвести число во введенную степень*/
-const value = +prompt();
-const subvalue = +prompt();
+/* Выявить является ли введенное число четным
+*/
+const x = +prompt();
+x%2==0? console.log(true) : console.log(false);
 
-console.log(value ** subvalue);
