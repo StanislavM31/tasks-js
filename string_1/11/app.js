@@ -5,11 +5,11 @@
 100 -> 1
 */
 
-let a = prompt('введите');
+let a = prompt('введите число');
 
 if (isNaN(a)){
     console.log('ошибка');
 } else {
-    a= +a;
-    console.log(`${Math.floor((a/100))}`);
+    
+    console.log(`${Math.floor((a/100))} метра`);
 }
