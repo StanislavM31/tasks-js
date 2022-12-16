@@ -24,9 +24,9 @@ if (isNaN(a)) {
   console.log(`${x4} => ${x4%2 == 0}`);
 
   console.log(
-    (Boolean(x1%2==0))+
-    (Boolean(x2%2==0))+
-    (Boolean(x3%2==0))+
-    (Boolean(x4%2==0))
+    (`${Boolean(x1%2)}`)+
+    (Boolean(x2%2))+
+    (Boolean(x3%2))+
+    (Boolean(x4%2))
     );
 }
