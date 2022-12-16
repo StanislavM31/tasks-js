@@ -4,12 +4,25 @@
 123 -> Сумма цифр = 6 Произведение цифр = 6
 */
 
-let a = prompt('введите количество минут');
+let a = prompt('введите ТРЕХЗНАЧНОЕ число');
 
 if (isNaN(a)){
     console.log('ошибка');
 } else {
+    a = +a;
+    x1= Math.floor(a/100); //1
+    console.log(` сотни ${x1} `);
 
-    console.log(`${Math.floor((a/100)+Math.floor((a/10))} метра`);
+    x2= Math.floor((a - x1*100)/10);//2
+    console.log(` десятки ${x2} `);
+
+    x3= Math.floor((a - x1*100 - x2*10)/1);
+    console.log(`  единицы ${x3} `);//3
+
+    console.log('==================')
+    let y = x1+x2+x3;
+    console.log(y);
+
+//pzdc =( 55 min;
 }
 
