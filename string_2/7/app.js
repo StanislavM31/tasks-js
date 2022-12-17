@@ -6,11 +6,10 @@
 let str = prompt('enter string');
 
 if(isNaN(str)){
-    console.log(str.split(`@`).join(' '));
+    console.log(str.split(`@`).join('!'));
     console.log(str.replaceAll(`@`, `!`));
 } else {
     console.log(`error`);
 }
 
-let str1 = prompt('enter another string');
 

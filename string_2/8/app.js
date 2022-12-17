@@ -6,7 +6,8 @@
 let a = "aaa bbb ccc";
 
 if (isNaN(a)) {
-  console.log(a.slice(4, 7));
+  console.log(a.replaceAll(" bbb ", ""));
 } else {
   console.log("error");
 }
+
