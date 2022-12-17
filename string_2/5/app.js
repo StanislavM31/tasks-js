@@ -1,12 +1,12 @@
-/* Даны переменные a и b. Проверьте, что a делится без остатка на b. Если это так -
-выведите 'Делится' и результат деления, иначе выведите 'Делится с остатком' и
-само значение деления
+/*
+‘HTML JavaScript PHP’ преобразовать в "HTML-JAVASCRIPT-PHP"
  */
 
-let a = +prompt(), b = +prompt();
+let str = "HTML JavaScript PHP";
 
-if(a%b===1){
-    console.log('делится', a/b)
-} else{
-    console.log('без остатка')
-}
+console.log(`string = ${str}`);
+
+console.log(`string.replaceAll(" ", "-")`);
+
+console.log(`string = ${str.replaceAll(" ", "-")}`);
+

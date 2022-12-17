@@ -9,5 +9,5 @@ if(isNaN(a)){
     console.log( a.toLowerCase().split(' ').join(''));
     console.log( `длина строки: ${a.length}`);
 } else {
-
+    console.log('ошибка ввода');
 }
