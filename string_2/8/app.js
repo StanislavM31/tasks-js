@@ -6,7 +6,8 @@
 let a = "aaa bbb ccc";
 
 if (isNaN(a)) {
-  console.log(a.replaceAll(" bbb ", ""));
+  a.replaceAll("bbb", "");
+  console.log(a.replaceAll("bbb", "").split(' ').join(''));
 } else {
   console.log("error");
 }
