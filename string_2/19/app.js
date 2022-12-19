@@ -1,29 +1,15 @@
 /*
-Даны три числа a, b, c. Напишите программу, которая находит корни квадратного
-уравнения
-ax^2 + bx + c = 0
-Если уравнение имеет два корня, то следует вывести их в порядке возра
+19. На вход программе подается строка. Преобразуйте первую букву каждого слова
+строки в верхний регистр (for)
 */
-let a = +prompt('введите число a');
-let b = +prompt('введите число b');
-let c = +prompt('введите число c');
-let D = b*b - 4*a*c;
-let x1;
-let x2;
-if(D<0){
-    console.log('нет действительных корней');
-} else if(D==0){
-    x1 = -(b/2*a);
-    console.log(x1);
-} else {
-    x1= -b + (Math.sqrt(D))/2*a;
-    x2= -b - (Math.sqrt(D))/2*a;
-    if (x1 > x2){
-        console.log(`меньший корень: ${x2} \nбОльший корень: ${x1} `);
-    } else {
-        console.log(`меньший корень: ${x1} \nбОльший корень: ${x2}`);
-    }
 
+let str = "html css javascript";
+
+let arr = str.split(' '); // ['html', 'css', javascript'];
+let res='';
+for (let i = 0; i<arr.length; i++){
+
+    res += arr[i][0].toUpperCase() + arr[i].slice(1)+ ' ';
 }
 
-
+console.log(res);
