@@ -3,12 +3,7 @@
 
 */
 
-let a = +prompt('введите число');
+let a = ['я', 'учу', 'javascript', '!'];
 
-if(a==0){
-    console.log('Ноль')
-} else if(a<0){
-    console.log('меньше нуля')
-} else {
-    console.log('больше нуля')
-}
+console.log(a);
+console.log(a.join('+'));

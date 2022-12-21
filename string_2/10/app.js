@@ -7,7 +7,7 @@
 let a = 'HTML JavaScript PHP';
 console.log('фраза из трех слов: HTML JavaScript PHP');
 let l = a.split(" ").join('').length;
-console.log(`длина строки ${ l}`);
+console.log(`длина строки ${l}`);
 
 console.log(a.slice(0, 4));
 
