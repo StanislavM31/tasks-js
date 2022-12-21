@@ -7,5 +7,5 @@
 let a = prompt('введите пару слов через пробел');
 
 
-    console.log(a.split(' ').length);
+console.log(a.split(' ').length);
 
