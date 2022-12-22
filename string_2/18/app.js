@@ -1,15 +1,27 @@
 /*
-Пользователь вводит с клавиатуры число. Найдите корень введенного числа (если
-же результат – число с плавающей точкой, то округлить то целых)
+Пользователь вводит строку. Необходимо вывести все гласные отдельной строкой
+(for)
+fullstack => ua
+
 */
 
-let a = +prompt('введите число');
-let x =  Math.sqrt(a);
-if(x%Math.floor(x) == 0){
-
-    console.log(x,'без точки');
+let a = prompt('введите строку на русском');
+let c = 'бвгджзклмнпрстфхцчшщ';
+let arr1 = [
+    "а", "е", "и", "й", "о", "у", "э", "ю", "я"
+];
+let arr = arr1.join('');
+let rez='';
+if(isNaN(a)){
+    for(let i =0; i<arr.length; i++){
+        if(arr.includes(a[i])){
+            rez+=a[i];
+            console.log(a[i]);
+        }
+    }
 } else{
-    console.log(Math.floor(x),'с точкой');
+    console.log('error');
 }
+console.log(`согласные в этой строке: ${rez}`);
 
 
