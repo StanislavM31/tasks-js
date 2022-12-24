@@ -9,13 +9,18 @@ console.log(str);
 
 let finalString = "";
 let t = str.split(' ');
-let temp = ' ';
 
 for( let i=0; i<t.length; i++){
-    
-    for (let j = 0; j <t[i].length; j++){
-        if(t[i]==='_');
+    let temp = t[i];
 
+    for (let j = 0; j <temp.length; j++){
+        if(temp[j]!=='_'){
+            finalString += temp[j];
+        } else{
+            finalString += " ";
+        }
     }
 }
+
+console.log(finalString);
 
