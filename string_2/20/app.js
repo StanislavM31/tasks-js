@@ -4,7 +4,7 @@
 преобразовать в верхний регистр (for)
 */
 
-const str = 'hello_ my_ little_ js-lover_';
+const str = 'Hello_ My_ Little_ Js-lover_';
 console.log(str);
 
 let finalString = "";
@@ -22,5 +22,8 @@ for( let i=0; i<t.length; i++){
     }
 }
 
-console.log(finalString);
+console.log( finalString);
+let rez = finalString[0]+finalString.slice(1).toLowerCase();
+
+console.log(`преобразованная строка: `, rez);
 
