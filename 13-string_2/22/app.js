@@ -8,7 +8,11 @@ Swap Case => sWAP cASE
 const str = "Swap Case";
 
 let finalString = "";
-for (let i = 0; i <string.length; i++){
-    if(string[i])
+for (let i = 0; i <str.length; i++){
+    if(str[i]===str[i].toUpperCase()){
+        finalString += str[i].toLowerCase();
+    } else {
+        
+    }
 }
 

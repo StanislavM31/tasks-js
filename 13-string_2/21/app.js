@@ -12,7 +12,7 @@ str = str.split(' ');
 let flag=0;
 
 for(let i=0; i<str.length; i++){
-    if(str[i][0].toLocaleUpperCase()==str[i][0]){
+    if(str[i][0].toUpperCase()==str[i][0]){
         flag++;
     }
 }
