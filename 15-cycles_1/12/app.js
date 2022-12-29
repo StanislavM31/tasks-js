@@ -19,6 +19,7 @@ console.log(
   "dad"
 );
 let poly = 0;
+let polyset = a.length;
 
 if (isNaN(a)) {
   a = a.split("");
@@ -26,11 +27,12 @@ if (isNaN(a)) {
     if (a[i] === a[j]) {
       console.log(a[i], "=", a[j]);
       poly++;
+      console.log(poly);
     } else {
       poly--;
     }
   }
-  if (poly > 0) {
+  if (poly == polyset) {
     console.log(`слово '${a.join("")}' - палиндром`);
   } else {
     console.log("не палиндром");
