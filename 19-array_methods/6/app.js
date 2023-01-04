@@ -4,7 +4,7 @@
 
 
 let arr = [];
-let l = prompt('length of arr');
+let l = prompt('length of arr:...');
 
 
 for (let i = 0; i < l; i++) {
