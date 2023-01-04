@@ -19,9 +19,13 @@ console.log(a,b);
 console.log(i);
 i=0;
 
-a.forEach(function (elem) {
-    console.log(`${a[elem]}==${b[elem]}:${Boolean(a[elem]==b[elem])}`);
-    rez+= Boolean(a[elem]==b[elem])
+a.forEach(function (elem,i) {
+/*     console.log(`${a[elem]}==${b[elem]}:${Boolean(a[elem]==b[elem])}`);
+    if(Boolean(a[elem]===b[elem])){
+        rez++;
+    } */
+    console.log(`${a[i]}===${b[i]}:${Boolean(a[i]===b[i])}`);
+    rez += Boolean(a[i]===b[i]);
 })
 
 
@@ -31,10 +35,10 @@ a.forEach(function (elem) {
     rez += Boolean(a[i]===b[i]);
     console.log(`${a[i]}===${b[i]}:${Boolean(a[i]===b[i])}`);
 } */
+console.log('finalREZ:', rez);
 
 if(rez==5){
     console.log(true);
 } else {
     console.log(false);
 }
-console.log('finalREZ:', rez);
