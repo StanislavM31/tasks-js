@@ -6,3 +6,11 @@
 [1, 24, 5] -> [“нечет”, “чет”, “нечет”]
 Использовать map
 */
+
+const n = +prompt('кол-во элементов в массиве');
+const arr = [];
+for (let i = 0; i < n; i++) {
+    const element = prompt();
+    if(isNaN(elem)) continue;
+    arr.push(elem);
+}
