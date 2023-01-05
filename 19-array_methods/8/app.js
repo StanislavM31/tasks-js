@@ -11,7 +11,7 @@ for (let i = 0; i < n; i++) {
       alert('мне нужны только числа!')
    } */
 
-  arr.push(+temp);
+  arr.push(temp);
 }
 console.log(arr);
 let rez = arr.every(function (element) {
@@ -20,3 +20,14 @@ let rez = arr.every(function (element) {
 });
 
 console.log(rez);
+
+console.log('== способ через forEach ==');
+let c=0;
+arr.forEach(function (el) {
+   c += Boolean(!isNaN(el));
+})
+ if(c!==n){
+   console.log(false);
+ } else{
+ console.log(true);
+ }
