@@ -7,10 +7,18 @@
 Использовать map
 */
 
-const n = +prompt('кол-во элементов в массиве');
+const n = +prompt("кол-во элементов в массиве");
 const arr = [];
 for (let i = 0; i < n; i++) {
-    const element = prompt();
-    if(isNaN(elem)) continue;
-    arr.push(elem);
+  const element = prompt();
+  arr.push(element);
 }
+let rez = [];
+rez = arr.map(function (el) {
+    if(el%2==0){
+        return 'чет'
+    } else{
+        return 'нечет'
+    }
+});
+console.log(rez);

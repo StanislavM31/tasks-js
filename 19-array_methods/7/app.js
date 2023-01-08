@@ -7,3 +7,6 @@ console.log(arr[0]);
 console.log(arr.forEach(function(elem, i){
     console.log(arr[i]);
 }));
+
+let a = arr.join(' ');
+console.log(a.slice(0, a.indexOf(' ')));
