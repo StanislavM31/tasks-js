@@ -13,8 +13,7 @@ for (let i = 0; i < n; i++) {
   const element = prompt();
   arr.push(element);
 }
-let rez = [];
-rez = arr.map(function (el) {
+let rez = arr.map(function (el) {
     if(el%2==0){
         return 'чет'
     } else{
