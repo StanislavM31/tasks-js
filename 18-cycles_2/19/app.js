@@ -1,21 +1,18 @@
 /*
-10. Дан массив с элементами [1, 2, 2, 3, 4, 4, 3, 4, 5]. Выведите только уникальные
+19. Пользователь вводит число, явдяющееся количеством элементов будущего
+массива. Напишите код заполнения массива методом prompt. Проверить каждый
+prompt на число (ввод строки, проверка на isNaN)
 
- */
+*/
 
-let arr = [17, 2,,42, 42, 2, 2, ,15, 42, 2, 3, 17, 4, 4, 5, 1].sort((a,b)=> a-b);
-/* 1,5 */
-let rez = [];
-
-console.log(arr);
-
-
-for (let i = 0; i < arr.length; i++) {
-
-  if(arr[i]!==arr[i+1] && arr[i]!==arr[i-1]){
-    console.log(arr[i]);
-    rez.push(arr[i]);
+let a = prompt('enter the digit');
+let arr = [];
+for (let index = 0; index < a; index++) {
+  let element;
+  while (isNaN(element=prompt('введите элемент'))) {
+    alert('нужно ввести число');
   }
+  arr.push(+element);
 }
 
-console.log(rez);
+console.log(arr);

@@ -1,21 +1,15 @@
 /*
-10. Дан массив с элементами [1, 2, 2, 3, 4, 4, 3, 4, 5]. Выведите только уникальные
+17. Дано предложение и количество раз которое его надо повторить. Напишите
+программу, которая повторяет данное предложение нужное количество раз.
+*/
 
- */
+let times;
 
-let arr = [17, 2,,42, 42, 2, 2, ,15, 42, 2, 3, 17, 4, 4, 5, 1].sort((a,b)=> a-b);
-/* 1,5 */
-let rez = [];
-
-console.log(arr);
-
-
-for (let i = 0; i < arr.length; i++) {
-
-  if(arr[i]!==arr[i+1] && arr[i]!==arr[i-1]){
-    console.log(arr[i]);
-    rez.push(arr[i]);
-  }
+while(isNaN(times = prompt('склько раз повторим предолжение?...'))){
+  alert('Введите число');
 }
+console.log(typeof times);
 
-console.log(rez);
+
+let str = prompt('введите предложение...');
+console.log(str.repeat(times));
