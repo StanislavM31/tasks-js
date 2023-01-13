@@ -5,7 +5,14 @@
 возвращающую массив с удвоенными элементами
  */
 
-let arr = [1, 2, 3, 4, 5, "string"];
+let arr =[];
+
+let size = prompt("Ведите размер массива");
+for (let i = 0; i < size; i++) {
+    const element = prompt('Введите элемент массива');
+    arr.push(element);
+}
+
 let validArr;
 let doubled = (x)=>{
     return x.map(function (elem) {
@@ -13,19 +20,19 @@ let doubled = (x)=>{
     })
 }
 
-let isValid = (a) => {
+let isValid = (a,s) => {
   let filtered = a.filter(function (elem) {
     if (!isNaN(elem)) {
       return true;
     }
 
   });
-  if (filtered.length>0){
+  if (filtered.length==s){
     return doubled(filtered);
   } else{
-    return 'В массиве есть строка';
+    return 'В массиве есть строка. не смогу удвоить element';
   }
 };
 
-console.log(isValid(arr));
+console.log(isValid(arr, size));
 
