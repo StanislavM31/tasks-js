@@ -5,20 +5,27 @@
 возвращающую массив с удвоенными элементами
  */
 
-let arr = [ 1, 2, 3, 4, 5, "string"];
-
-const a = (number) =>{
- let filtered = number.filter(function (elem) {
-        if(!isNaN(elem)){
-            return true
-        } else {
-            return false;
-        }
+let arr = [1, 2, 3, 4, 5, "string"];
+let validArr;
+let doubled = (x)=>{
+    return x.map(function (elem) {
+        return elem*2;
     })
-    return filtered;
 }
 
-console.log('здесь функция(она же const a) не вызвана...', a); //поэтому в консольлоге мы видим чистые инструкции
-console.log('Здесь только числа', a(arr));
+let isValid = (a) => {
+  let filtered = a.filter(function (elem) {
+    if (!isNaN(elem)) {
+      return true;
+    }
 
-//а здесь вызвали и она отработала...поэтому в консоли только очищенный от строк массив
+  });
+  if (filtered.length>0){
+    return doubled(filtered);
+  } else{
+    return 'В массиве есть строка';
+  }
+};
+
+console.log(isValid(arr));
+
