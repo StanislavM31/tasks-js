@@ -1,27 +1,14 @@
-/* Палиндром. Сравнить с развернутой строкой не используя reverse. For */
+/*
+4. На входе массив. Необходимо создать функцию проверки на то что в массиве
+только числа. Функция возвращает true, если в массиве только числа и false в
+противном случае
+*/
 
-let str = prompt('enter string');
-let temp = '';
-for (let i=str.length-1; i>=0; i--){
-    console.log(str[i]);
-    temp += str[i];
-    console.log(temp);
+let mas = [ 23, 45, 12, 1, 5, 'str', 'less', 11];
+let mas1 = [ 23, 45, 12, 1, 5, 11];
+let check = (a) =>{
+    return a.every(el=>{
+        return !isNaN(el);
+    })
 }
-
-console.log(temp);
-if(temp==str){
-    console.log("Палиндром!!");
-}
-else{
-    console.log("не палиндром");
-}
-
-switch (temp) {
-    case str:
-        console.log("Палиндром!!");
-        break;
-
-    default:
-        console.log("не палиндром");
-        break;
-}
+console.log(check(mas1));
