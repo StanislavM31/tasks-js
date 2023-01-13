@@ -1,18 +1,22 @@
-/* 2. Найти максимальное число динамичного массива. filter  */
+/*
+2. Напишите функцию, которая принимает строку в маленьком регистре и
+возаращает строку, где каждое слово начинается с большого регистра
+hschool company -> Hschool Company
+*/
 
+let str = prompt('введите фразу');
 
-
-let l = +prompt("Enter size of array");
-let arr = [];
-for (let i = 0; i < l; i++) {
-  arr.push(+prompt("Enter elem of arr"));
+let foo = (a)=>{
+  let rez;
+  let r ="";
+  rez = a.split(' ');
+  console.log(rez);
+  for (const i of rez) {
+    let tempUpper = i[0].toUpperCase()+ i.slice(1);
+    console.log(tempUpper);
+    r+=tempUpper+' '
+  }
+  return r;
 }
 
-let max = arr[0];
-
-arr.forEach(function (el) {
-  if (el > max) {
-    max = el;
-  }
-});
-console.log(max, arr);
+console.log(foo(str));
