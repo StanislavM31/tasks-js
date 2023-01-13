@@ -1,22 +1,19 @@
 /*
-3. Найти максимальное и минимальное число динамичного массива. forEach
+3. Напишите функцию, которая принимает статичный массив строк. Необходимо
+отфильтровать значения и оставить только те, где длина строк до 2 символов.
+[“by”, “belarus”, “de”, “ru”, “germany”] -> [“by”, “de”, “ru”]
  */
 
-let l = +prompt("Enter size of array:...");
-let arr = [];
-for (let i = 0; i < l; i++) {
-  arr.push(+prompt("Enter elem of arr..."));
+let str = ['by', 'belarus', 'de', 'ru', 'germany'];
+
+let filter = (f) =>{
+  return f.filter(el=>{
+    if(el.length==2){
+      return true;
+    }
+  })
 }
 
-let max = arr[0];
-let min = arr[0];
 
-arr.forEach(function (el) {
-  if (el > max) {
-    max = el;
-  }
-  if (el < min) {
-    min=el;
-  }
-});
-console.log(max, min, arr);
+
+console.log(filter(str));
