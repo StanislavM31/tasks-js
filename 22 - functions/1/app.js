@@ -1,14 +1,12 @@
 /*
-1. Сумма элементов массива динамичного массива. reduce
- */
+1. Пользователь вводит имя фамилию. Необходимо создать функцию
+возвращающую строку вида «Привет, {имя} {фамилия}»
+*/
+let n = prompt('ИМЯ ?');
+let sname = prompt('ФАМИЛИЯ?');
 
-let arr = [];
-let l = prompt("Enter size of array");
-
-for (let i = 0; i < l; i++) {
-    arr.push (+prompt('Enter elem of arr'));
+const hi =(a,b)=>{
+    console.log(`Привет, ${a} ${b}`);
 }
 
-console.log(arr.reduce(function(acc, el) {
-    return acc+el;
-},0));
+hi(n,sname);
