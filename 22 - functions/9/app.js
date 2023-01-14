@@ -16,12 +16,18 @@ const doArray = (a) => {
   console.log(`Вы ввели массив [${a}]`);
   let rez = [];
   if (check(arr) == true) {
-    a.forEach((element) => {
+/*     a.forEach((element) => {
       if (element % 2 == 0) {
         rez.push(element);
       }
-      
+
     });
+    console.log(`это массив только с четными числами...[${rez}]`); */
+    rez = a.filter(el=>{
+        if (el%2==0) {
+            return true;
+        }
+    })
     console.log(`это массив только с четными числами...[${rez}]`);
   } else {
     console.log("в массиве есть строки!!");
