@@ -8,6 +8,7 @@
 { "id": "java", "label": "Java", "category": "programmingLanguages", "priority": 3 },
 { "id": "go", "label": "GO", "category": "programmingLanguages", "priority": 3 }
 ]
+
 */
 
 const arr = [
@@ -37,3 +38,12 @@ const arr = [
      priority: 3
     }
 ];
+
+arr.forEach(el=>{
+    console.log(el);
+/*     for (const i in el) {
+        console.log(i, ":", el);
+    } */
+
+
+})
