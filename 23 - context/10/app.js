@@ -2,21 +2,26 @@
 10. Напишите функцию, принимающую в качестве параметра статичный объект.
 Функция возвращает новый объект, где значения – исключительно числа
 первоначального объекта. IIFE
- */
-let obj = {
-    'value': 17,
-    'valueq': 100,
-    'key': 'string',
-    'keyq': 'qwerty',
+*/
+
+let o = {
+    'a': 10,
+    'b': 'string0',
+    'c': 50,
+    'd': 'string1',
+    'e': 100,
+    'f': 'string2',
 }
 
-(function (object) {
+function doValues(obj) {
     let arr = [];
-    for (const key in object) {
-        if(typeof object[key] == 'number'){
-            arr.push(key);
+    for (const key in obj) {
+        if(typeof obj[key] == 'number'){
+            arr.push(obj[key]);
         }
     }
-    console.log(arr);
 
-}(obj))
+    return arr;
+};
+
+console.log(doValues(o));;
