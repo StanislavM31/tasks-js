@@ -1,27 +1,21 @@
 /*
-10. Напишите функцию, принимающую в качестве параметра статичный объект.
-Функция возвращает новый объект, где значения – исключительно числа
-первоначального объекта. IIFE
+Напишите функцию, которая принимает два параметра: строку и букву. Функция
+должна подсчитывать количество вхождений указанной буквы в строке. Добавить
+проверки
 */
 
-let o = {
-    'a': 10,
-    'b': 'string0',
-    'c': 50,
-    'd': 'string1',
-    'e': 100,
-    'f': 'string2',
-}
+let a = 'hanna';
+let b = 'a';
 
-function doValues(obj) {
-    let arr = [];
-    for (const key in obj) {
-        if(typeof obj[key] == 'number'){
-            arr.push(obj[key]);
+function find (params, symb) {
+    let rez = 0;
+    for (let i = 0; i < params.length; i++) {
+        if(params[i]==symb){
+            rez++;
         }
     }
+    return rez;
+}
+let per = find(a,b);
 
-    return arr;
-};
-
-console.log(doValues(o));;
+console.log('count: ', per);
