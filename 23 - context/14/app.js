@@ -15,17 +15,21 @@ function pasgen() {
 let pswrd = pasgen();
 console.log(pswrd);
 
+
 function pasGenClousure() {
-    let pass_l = 8;
-    let pass_symb = Math.floor(Math.random() * 10);
-    let pswrd = '';
-    return a=>{
-        while(pswrd!=8){
-            pswrd+=1;
+
+    let password = "";
+    return function () {
+        let pass_l = 8;
+        let pass_symb = Math.floor(Math.random() * 10);
+        while (pswrd.length != pass_l) {
+            password += pass_symb;
         }
-        return pswrd;
-    }
+        console.log(password);
+        return password;
+  }
 }
 
-let a = pasGenClousure();
-console.log(a);
+let wrap = pasGenClousure();
+
+console.log(wrap);
