@@ -20,7 +20,13 @@ function wraper(){
         return s;
     }
 }
-
+function wraper1(){
+    let s="";
+    return function(str){
+        let t = 0;
+        return s;
+    }
+}
 let wrap = wraper();
 console.log(wrap);//тело функции
 wrap('1111');
@@ -28,6 +34,8 @@ wrap('2222');
 wrap('3333');
 wrap('4444');
 wrap('5555');
+console.log(wraper1());
+console.log(wraper1());
 
 /* wraper(); /SHIT!!
 console.log(wrap); */

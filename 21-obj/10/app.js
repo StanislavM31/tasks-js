@@ -13,15 +13,13 @@ let obj = {
   };
 
   for (const iterator in obj) {
-    let temp;
-    while(){
-        alert('Строка не должна быть пустой!!')
-
-    };
-
+    let temp = iterator;
+    obj[iterator] = prompt(`please, enter the ${iterator}`);
+    console.log(obj[iterator]);
   }
 
   for (const i in obj) {
+
     console.log(`${i}:${obj[i]}`);
   }
   console.log(obj);
