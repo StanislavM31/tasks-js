@@ -3,25 +3,17 @@
 не будут перебраны все числа из этого промежутка.
  */
 
+let array = Array();
 
-function wrapper() {
-    return function () {
-        let rand = Math.random()*100;
+function doArray(){
 
-        return Math.floor(rand);
-    }
+    return a=> {
+        let temp = Math.random()*100;
+        return Math.floor(temp)};
 }
-/* let foo = cloasure();
 
-let arr = [];
-while (arr.length!==100) {
-    let temp = foo();
-    if(!arr.includes(temp)){
-        arr.push(foo());
-    }
-} */
-let wrap = wrapper();
+let a = doArray();
 
-wrap();
-wrap();
-wrap();
+console.log(a());
+console.log(a());
+console.log(a());
