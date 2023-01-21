@@ -3,40 +3,40 @@
 последующем вызове функции
 */
 
-/* function wraper(){
-    let s ='';
-    let str = prompt('ENter string');
-    return function(){
-        return s+=str;
-    }
-} */
-function wraper(){
-    let s ='';
-    console.log(s);
-    return function(str){
-        let tt = 0;
-        console.log(tt++);
-        console.log(s+=str);
-        return s;
-    }
+function concat(param){
+    return (str)=> param+=str;
 }
-function wraper1(){
-    let s="";
-    return function(str){
-        let t = 0;
-        return s;
-    }
-}
-let wrap = wraper();
-console.log(wrap);//тело функции
-wrap('1111');
-wrap('2222');
-wrap('3333');
-wrap('4444');
-wrap('5555');
-console.log(wraper1());
-console.log(wraper1());
 
-/* wraper(); /SHIT!!
-console.log(wrap); */
-//30.06
+let foo = concat('');
+console.log(foo('coca'));
+console.log(foo('cola'));
+console.log(foo(' is good'));
+
+const obj = {
+    test: function(){
+        console.log(this);
+        console.log(obj.id);
+        console.log(this.id);
+        console.log(this.exist);
+    },
+    id: 777,
+    exist: true,
+    func: ()=>{
+        console.log(this);
+    }
+}
+
+obj.func();//window
+obj.test();
+
+function test(){
+    console.log('---');
+    return function(){
+        console.log('+++++');
+        console.log('+++++');
+        console.log('+++++');
+
+    }
+}
+
+let x = test();
