@@ -1,9 +1,12 @@
 /* 15. *Вычислить факториал числа используя рекурсию  */
 
-function doFactorial(n){
+
+
+function foo_factorial(params) {
     if(n<=1){
         return 1;
     }
-    return n*doFactorial(n-1);
+    return n*foo_factorial
 }
-console.log(doFactorial(5));
+console.log(foo_factorial(10));
+
