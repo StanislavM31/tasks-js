@@ -6,13 +6,13 @@ const arr = [10,20,30,40,50];
 let i = 0;
 let s = 0;
 
-function sumArr(array) {
-  if(array[i]== undefined){
-    return s;
+function sumArr(array, index, sum) {
+  if(array[index]== undefined){
+    return sum;
   }
-  s+=array[i];
-  i++;
-  return sumArr(array);
+  sum+=array[index];
+  index++;
+  return sumArr(array, index, sum);
 }
 
-console.log(sumArr(arr));
+console.log(sumArr(arr, i, s));
