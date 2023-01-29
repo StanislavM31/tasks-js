@@ -4,7 +4,7 @@
 на числа. Далее вывести только те числа, которые кратны 3
 */
 
-const array = JSON.parse(`[1,2,3,4,5 ]`);
+const array = JSON.parse(`"qwerty"`);
 
 function validator(array_) {
   if (!Array.isArray(array_)) throw new Error("ЭТО НЕ МАССИВ");
