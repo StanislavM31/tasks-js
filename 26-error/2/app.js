@@ -2,8 +2,8 @@
 2. На входе массив значений. Необходимо его обработать. Если в массиве есть хотя
 бы 1 строка, бросить исключение.
  */
-let array = [1,2,3,4,5,'string'];
-function isValid(array_) {
+let arr = [1,2,3,4,5,'string'];
+function isValid(array) {
     try {
         for (let i = 0; i < array.length; i++) {
             const element = array[i];
@@ -18,5 +18,5 @@ function isValid(array_) {
     }
 }
 
-let a = isValid(array);
+let a = isValid(arr);
 console.log(a);
