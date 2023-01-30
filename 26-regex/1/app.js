@@ -1,27 +1,21 @@
 /*
-1. На входе значение. Необходимо его обработать. Если это число и оно не является
-четным, бросить исключение
+1. На вход подается строка в виде числа. Необходимо написать регулярное
+выражение. Если строка состоит только из чисел, то вывести булевое true, в
+противном случае бросить исключение и обработать
+/^[0-9]+$/gm
 */
 
-let value = prompt('Введите значение');
-
-function isValid(value_) {
-    try {
-        if(isNaN(value_)){
-            throw new Error('это буква!');
-        }
-        if(value_%2 !==0){
-            throw new Error('это нечётное число');
-        }
-        if(value_%2==1){
-            throw new Error('это нечётное число');
-        }
-        return true;
-
-    } catch (error) {
-        return error.message
+let str = "4e";
+function isValid(string_) {
+  try {
+    if (!/^[0-9]+$/gm.test(string_)) {
+      throw new Error("не подходит под регулярное выражение(not valid)");
     }
+    return true;
+  } catch (error) {
+    return error.message;
+  }
 }
 
-let result = isValid(value);
+let result = isValid(str);
 console.log(result);

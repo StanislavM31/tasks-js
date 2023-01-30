@@ -1,35 +1,21 @@
 /*
-4. Дана строка массива. Необходимо спарсить строку. Если же после того как вы
-спарсили данные у вас не массив – бросить исключение. Вывести
-те элементы массива, id котрых – четное значение
+4. На вход подается строка в виде электронной почты пользователя. Необходимо
+написать регулярное выражение для данной строки. Если же строка подходит под
+регулярное выражение, то вывести булевое true, в противном случае бросить
+исключение и обработать
 
-[
-{ "id": 1, "label": "JavaScript", "category": "programmingLanguages", "priority": 1 },
-{ "id": 2, "label": "TypeScript", "category": "programmingLanguages", "priority": 1 },
-{ "id": 3, "label": "SQL", "category": "programmingLanguages", "priority": 2 },
-{ "id": 4, "label": "Java", "category": "programmingLanguages", "priority": 3 },
-{ "id": 5, "label": "GO", "category": "programmingLanguages", "priority": 3 }
-]
 */
 
-let array = JSON.parse(`[
-    { "id": 1, "label": "JavaScript", "category": "programmingLanguages", "priority": 1 },
-    { "id": 2, "label": "TypeScript", "category": "programmingLanguages", "priority": 1 },
-    { "id": 3, "label": "SQL", "category": "programmingLanguages", "priority": 2 },
-    { "id": 4, "label": "Java", "category": "programmingLanguages", "priority": 3 },
-    { "id": 5, "label": "GO", "category": "programmingLanguages", "priority": 3 }
-    ]`);
+let mail = "hello@gmail.com";
 
-function isValid(array_) {
+function isValid(mail_) {
   try {
-    if (!Array.isArray(array_)) {
-      throw new Error("Это не массив");
-    }
-    return array_.filter(el=>el.id%2==0);
+    if(!/^[a-z\._\-]+@[a-z]+\.[a-z]{1,5}$/gm.test(mail_)) throw new Error('not valid');
+
   } catch (error) {
-    return error.message
+    return error.message;
   }
 }
 
-let t = isValid(array);
-console.log(t);
+let r = isValid(mail);
+console.log(r);

@@ -1,22 +1,24 @@
 /*
-2. На входе массив значений. Необходимо его обработать. Если в массиве есть хотя
-бы 1 строка, бросить исключение.
- */
-let arr = [1,2,3,4,5,'string'];
-function isValid(array) {
-    try {
-        for (let i = 0; i < array.length; i++) {
-            const element = array[i];
-            if(!isNaN(element)){
-                throw new Error('В массиве есть строка');
-            }
+2. На вход подается строка вида “имя фамилия возраст”. Необходимо написать
+регулярное выражение для данной строки. Если же строка подходит под
+регулярное выражение, то вывести булевое true, в противном случае бросить
+исключение и обработать
+*/
 
-        }
-        return true;
-    } catch (error) {
-        return error.message;
+str = "Johm Smith 23";
+
+function isValid() {
+  try {
+    if(!/^[A-Z]+[a-z] + [A-Z]+[a-z] + [0-9]{1,2}$/gm){
+        return true
+    } else {
+        return new Error('is not valid');
+
     }
+  } catch (error) {
+    return error.message;
+  }
 }
 
-let a = isValid(arr);
-console.log(a);
+let r = isValid(str);
+console.log(r);

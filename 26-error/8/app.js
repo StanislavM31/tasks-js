@@ -31,10 +31,10 @@ function fixArray(array){
             }
 
         }
-        throw new Error(`массив последовательный`);
+        return `массив последовательный`;
     } catch (error) {
         error.message;
     }
 }
-let a = ["a","b","d","f"];
+let a = ["a","b","c","d","f"];
 console.log(fixArray(a));

@@ -1,26 +1,16 @@
 /*
-3. Дана строка массива чисел. Необходимо спарсить строку. Если же после того как
-вы спарсили данные у вас не массив – бросить исключение. Добавить проверку
-на числа. Далее вывести только те числа, которые кратны 3
+3. На вход подается строка из 2 и более слов. Необходимо все пробелы заменить на
+“!”. Если же длина исходной строки не изменилась, вывести true, в противном
+случае бросить исключение и обработать
 */
-
-const array = JSON.parse(`"qwerty"`);
-
-function validator(array_) {
-  if (!Array.isArray(array_)) throw new Error("ЭТО НЕ МАССИВ");
-  for (let i = 0; i < array_.length; i++) {
-    if (isNaN(array_[i])) throw new Error("В массиве есть БУКВА!");
-  }
-}
-
-function isValid(array_) {
+let str = 'hello, happy world';
+function fixReplaceAll(string) {
   try {
-    validator(array_);
-    return array_.filter((el) => el % 3 == 0);
+    let result = string.ReplaceAll(/l/gm,`!`);
+    return result;
   } catch (error) {
     return error.message;
   }
 }
-
-let a = isValid(array);
-console.log(a);
+let r =fixReplaceAll(str);
+console.log(r);
