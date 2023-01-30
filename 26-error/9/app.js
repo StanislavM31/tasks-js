@@ -10,5 +10,23 @@
 мальчик. Гарантируется, что на пути всегда будет хотя бы один нулевой дом.
 Добавить проверку, что номера домов – только числа.
 [5, 1, 2, 3, 0, 1, 5, 0, 2] –> 11 (5 + 1 + 2 + 3 = 11)
-
 */
+let arr = [5, 1, 2, 3, 0, 1, 5, 0, 2];
+
+function count(array) {
+    try {
+        let c=0;
+        for (let i = 0; i < array.length; i++) {
+            if( array[i]==0){
+                throw new Error(`${c}`);
+            }
+            c+=array[i];
+
+        }
+        return c;
+    } catch (error) {
+        return error.message;
+    }
+}
+let sum = count(arr);
+console.log(sum);
