@@ -6,7 +6,7 @@
 let str = 'hello, happy world';
 function fixReplaceAll(string) {
   try {
-    let result = string.ReplaceAll(/l/gm,`!`);
+    let result = string.replaceAll(/ /gm,`!`);
     return result;
   } catch (error) {
     return error.message;

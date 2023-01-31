@@ -11,7 +11,7 @@ const path = 'C:/Users/Admin/Desktop/test.txt';
 
 function isValid(params) {
     try {
-        if(!(/^[A-Z]:(\\|\/)[a-zA-Z(\\|\/)]+\.[a-z])+$/gm.test(params)){
+        if(!/^[A-Z]:(\\|\/)[a-zA-Z(\\|\/)]+\.[a-z]+$/gm.test(params)){
             throw new Error('path is not valid');
         }
         return true;
