@@ -11,9 +11,11 @@ let mail = "hello@gmail.com";
 function isValid(mail_) {
   try {
     if(!/^[a-z\._\-]+@[a-z]+\.[a-z]{1,5}$/gm.test(mail_)) throw new Error('not valid');
-
+    console.log('IS VALID');
+    return true;
   } catch (error) {
     return error.message;
+
   }
 }
 
