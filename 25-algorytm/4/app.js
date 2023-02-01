@@ -1,4 +1,3 @@
-
 /*
 4. Пользователь вводит n – порядковый номер числа из ряда Фибоначчи.
 Реализуйте функцию на поиск числа n в данной последовательности используя
@@ -23,11 +22,31 @@ let i_ = 0;
     return x;
 }
 console.log(fibo(n_, x_, i_)); */
-let pro = +prompt('Введите число для ряда Фибоначчи');
+
+/* let pro = +prompt("Введите число для ряда Фибоначчи"); */
+let pro = 10;
 function fib(x) {
-    let res = (x-2)+(x-1);
-    console.log(res);
-    return res;
+  let res = x - 2 + (x - 1);
+  console.log(res);
+  return res;
 }
 
 fib(pro);
+
+function fi(x, i) {
+  if (x == 1) {
+      console.log(x);
+    return x;
+  } else {
+    if(i<=x){
+        x=x+x;
+        return fi(x, ++i)
+    }
+    else{
+        return x;
+    }
+  }
+}
+let ri = 5;
+let ii = 0;
+console.log(fi(ri, ii));
