@@ -10,11 +10,14 @@
 */
 
 let d = prompt('...enter the digit');
-
+function validator(a){
+    return isNaN(a);
+}
 function foo(x){
     try{
-        if(Math.sqrt(x)==Math.ceil(Math.sqrt(x))) return true;
-        else return false;
+        if(validator(x))throw new Error('НЕ ЧИСЛО. *Does NOT fit!');
+        
+        return Number.isInteger(Math.sqrt(x));
     }
     catch(e){
         return e.message;
