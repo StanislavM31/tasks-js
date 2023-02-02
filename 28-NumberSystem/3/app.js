@@ -8,18 +8,22 @@
 
 let string = "542613";
 
-function doOject(str) {
+function doObject(str) {
   try {
     let obj = {};
-    for (let i = 0; i < array.length; i++) {
-      const element = array[i];
+    for (let i = 0; i < str.length; i++) {
+      const element = +str[i];
       if (element % 2 == 0) {
         obj[element] = "чёт";
+
       } else {
         obj[element] = "нечёт";
       }
     }
+    return obj;
   } catch (error) {
     return error.message;
   }
 }
+
+console.log(doObject(string));
