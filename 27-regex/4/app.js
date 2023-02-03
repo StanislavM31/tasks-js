@@ -21,3 +21,4 @@ function isValid(mail_) {
 
 let r = isValid(mail);
 console.log(r);
+

@@ -6,21 +6,5 @@
 является, вывести true, в противном случае false. Добавить проверки
 3 –> false
 25 –> true
-49 –> true
+49 –> true 
 */
-
-let d = prompt('...enter the digit');
-function validator(a){
-    return isNaN(a);
-}
-function foo(x){
-    try{
-        if(validator(x))throw new Error('НЕ ЧИСЛО. *Does NOT fit!');
-        
-        return Number.isInteger(Math.sqrt(x));
-    }
-    catch(e){
-        return e.message;
-    }
-}
-console.log(foo(d));

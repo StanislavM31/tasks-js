@@ -3,7 +3,8 @@
 изограммой. Изограмма – это слово, в котором нет повторяющихся букв,
 последовательных или непоследовательных
 Dermatoglyphics –> true
-aba –> false
+abaabaaba –> false
 moOse –> false
 */
+function check(z) {}
 
