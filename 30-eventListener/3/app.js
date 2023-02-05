@@ -1,16 +1,14 @@
 /*
-3. На вход подается строка из 2 и более слов. Необходимо все пробелы заменить на
-“!”. Если же длина исходной строки не изменилась, вывести true, в противном
-случае бросить исключение и обработать
+Необходимо отобразить кнопку с надписью «Нажми на меня» и пустой инпут. По клику на кнопку вызвать alert и отобразить сообщение из значения инпута
 */
-let str = 'hello, happy world';
-function fixReplaceAll(string) {
+
+let btn = document.querySelector('.btn');
+btn.addEventListener(`click`, function(){
   try {
-    let result = string.replaceAll(/ /gm,`!`);
-    return result;
+    let input = document.querySelector(`input`);
+    alert(input.value);
+    if(input.value===``) throw new Error("пусто")
   } catch (error) {
-    return error.message;
+    
   }
-}
-let r =fixReplaceAll(str);
-console.log(r);
+})

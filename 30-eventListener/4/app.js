@@ -1,24 +1,27 @@
 /*
-4. На вход подается строка в виде электронной почты пользователя. Необходимо
-написать регулярное выражение для данной строки. Если же строка подходит под
-регулярное выражение, то вывести булевое true, в противном случае бросить
-исключение и обработать
+Необходимо отобразить кнопку с надписью «Нажми на меня»
+и пустой инпут. По клику на кнопку вызвать alert и
+отобразить сообщение из значения инпута.
+Проверки на ввод. Обработать ошибки
 
 */
 
-let mail = "hello@gmail.com";
-
-function isValid(mail_) {
+let btn = document.querySelector(`.button`);
+btn.addEventListener(`click`, function () {
   try {
-    if(!/^[a-z\._\-]+@[a-z]+\.[a-z]{1,5}$/gm.test(mail_)) throw new Error('not valid');
-    console.log('IS VALID');
-    return true;
+
+    let inp = document.querySelector(`input`);
+    if (!inp.value) {
+      throw new Error("пустое сообщение");
+    }
+    inp.style='border:1px solid black';
+    alert(inp.value);
+    inp.value='';
+
+
   } catch (error) {
-    return error.message;
-
+    let inp = document.querySelector(`input`);
+    inp.style='border:1px solid red';
+    alert(error.message);
   }
-}
-
-let r = isValid(mail);
-console.log(r);
-
+});
