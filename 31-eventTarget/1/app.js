@@ -1,15 +1,8 @@
-/*
-1. На вход программе подается строка текста содержащая “@”. Напишите
-программу, которая удаляет все вхождения символа “@”. Добавить проверки
-123@1@@34 -> 123134
- */
-let str = " 123@1@@34";
+/* На странице расположен маркированный список. Пользователь кликает на каждый item списка.
+Необъодимо отловить на какой из элементов нажал пользователь и отобразить */
 
-let result='';
-
-for (let i = 0; i<str.length; i++){
-    if(str[i]==="@") continue
-    else {
-        result = result+str[i];
-    }
+let element = document.querySelector(`.list`);
+function showMeElement(event) {
+    console.log(event.target);
 }
+element.addEventListener('click', showMeElement);

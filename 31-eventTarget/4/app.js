@@ -1,11 +1,17 @@
 /*
-На вход программе подается строковое значение. Если значение больше 2-х и
-меньше 11-ти или больше или равна 26-ти и меньше 30-ти, то выведите 'Верно', в
-противном случае выведите 'Неверно'
- */
+По двойному клику на кнопку изменить цвет кнопки
 
-let str = 123;
+*/
+let element = document.querySelector('.btn');
+let flag = false ;
+element.addEventListener('dblclick', function(){
 
-if( (str > 2 && str < 11) || str == 26 && str <30 ){
-    console.log( "Верно");
-} else console.log( "НЕверно");
+    if(flag == false){
+        this.style = ' background-color: red';
+        flag = true;
+    } else {
+        this.style = ' background-color: white';
+        flag = false;
+    }
+})
+
