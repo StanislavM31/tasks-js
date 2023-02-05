@@ -1,11 +1,17 @@
 /*
-Дан массив с элементами [2, 3, 4, 5]. С помощью цикла for найдите произведение
-элементов этого массива
+Вы вводите строку. Проверить является ли это слово палиндром.
+Добавить проверки
 */
 
-let n = [2, 3, 4, 5];
-let res = 1;
-for (let i = 0; i < n.length; i++) {
-    res *= n[i];
-}
-console.log(res);
+const element = document.querySelector('.btn');
+
+element.addEventListener('click', function(){
+    const tag_input = document.querySelector('input');
+    let result = document.querySelector('.res');
+    if(tag_input.value%2==0){
+        result.innerHTML = `${tag_input.value} четное`;
+    } else{
+        result.innerHTML = `${tag_input.value} НЕчетное`
+    }
+    tag_input.value = '';
+})
