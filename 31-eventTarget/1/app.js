@@ -2,7 +2,7 @@
 Необъодимо отловить на какой из элементов нажал пользователь и отобразить */
 
 let element = document.querySelector(`.list`);
-function showMeElement(event) {
+
+element.addEventListener('click', function(event){
     console.log(event.target);
-}
-element.addEventListener('click', showMeElement);
+});
