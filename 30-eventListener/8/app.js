@@ -1,9 +1,13 @@
 /*
-8. Дана строка состоящая из чисел, букв, специальных символов. Необходимо
-оставить в строке только буквенные символы используя регулярные выражения.
-Если же длина исходной строки изменилась, вывести true, в противном случае
-бросить исключение и обработать
+8. У вас есть кнопка.
+После нажатия поменять background.
 */
 
-let str = " 1wedffr77№;%";
+btn = document.querySelector('button');
+/* btn.addEventListener('click', function(){
+    btn.style = 'background-color: red';
+}) */
 
+function clickBtn(){
+    btn.style = 'background-color: red';
+}
