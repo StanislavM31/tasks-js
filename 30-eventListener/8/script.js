@@ -11,7 +11,7 @@ btn.addEventListener('click',function(){
     if(bool==true){
         btn.style.background = `red`;
         bool = false;
-    } else{
+    } else {
         btn.style.background = `green`;
         bool = true;
     }
