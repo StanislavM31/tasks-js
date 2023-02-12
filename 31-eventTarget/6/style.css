@@ -1,4 +1,8 @@
 .img{
     height: 500px;
     width: 500px;
+    background-image: url(./assets/hs-1.png);
+    background-repeat: no-repeat;
+    background-size: contain;
+    margin: auto auto;
 }
