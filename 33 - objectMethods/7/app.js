@@ -19,9 +19,10 @@ function doObj(str){
 }
 function count(o){
     let arr = Object.values(o);
-    let res = arr.reduce((a,b)=>{
+    let res = 0;
+    res = arr.reduce((a,b)=>{
         return a+b;
-    },0);
+    });
 
     return res;
 }
