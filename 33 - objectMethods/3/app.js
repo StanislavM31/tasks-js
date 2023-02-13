@@ -1,11 +1,21 @@
-/* Напишите программу, которая считывает длины двух катетов в прямоугольном
-треугольнике и выводит его площадь. Используйте формулу: S =
-1
-2
-∙a ∙ b
-
+/*
+3. На входе статичный объект и строка str. Написать функцию на поиск в объекте
+значения str. Values
 */
-const a = +prompt('катет 1');
-const b = +prompt('катет 2');
 
-console.log(a / 2 * b);
+let obj = {
+  q: 123,
+  id: `1111`,
+  man: true,
+  age: 23,
+  name: `Ivan`,
+};
+
+let str = `Ivan`;
+
+function find(o, s) {
+  let arr = Object.values(o);
+  return arr.includes(s);
+}
+let x = find(obj, str);
+console.log(x);
