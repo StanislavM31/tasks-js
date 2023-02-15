@@ -7,6 +7,7 @@
 const inp = document.querySelector('input');
 console.log(inp);
 
+
 inp.addEventListener('click', ()=>{
     inp.value="значение НЕ по умолчанию";
 })
