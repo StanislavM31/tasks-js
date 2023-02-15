@@ -1,11 +1,19 @@
 /*
-На странице контейнер из 5 инпутов.
-Необходимо по изменению кнопки получить значение соответствующего инпута и отобразить в alert
+По наведению на кнопку вывести сообщение «Hi». Когда мышка выходит за границы кнопки сновка скрывать
 */
+let element = document.querySelector("button");
 
-let el = document.querySelector('.container');
+element.addEventListener("mouseout", function () {
+  let paragraph = document.querySelector("body>*");
+  let removeNode = document.querySelectorAll('p')[0];
+  paragraph.removeChild(removeNode);
+});
 
-el.addEventListener('click', function(){
-    console.log(event.target.value);
-})
+element.addEventListener("mouseover", function () {
 
+    let articleP = document.querySelector("body");
+    let p = document.createElement("p");
+  let pText = document.createTextNode("Hi");
+  p.appendChild(pText);
+  articleP.appendChild(p);
+});
