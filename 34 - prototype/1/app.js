@@ -10,24 +10,13 @@ let avg = document.querySelector('.avg');
 let array = document.querySelector('.array');
 const arr = [];
 
-btn.addEventListener('click', function(){
-
-
-    try{
-        if(!inp.value){
-            throw new Error('пустое значение');
-        }
-        arr.push(inp.value);
-        array.innerHTML = arr;
-
-        let sum = arr.reduce((prev,cur)=>{
-            return prev+ +cur;
-        },0)
-        avg.innerHTML = 'average: ' + sum/arr.length;
-        inp.innerHTML="";
-
-    } catch(error){
-        return error.message;
-    }
-});
+btn.addEventListener('click',function(a,b){
+    arr.push(+inp.value);
+    array.innerHTML = `числа в массиве [${arr}]`;
+    inp.value = '';
+    let t = arr.reduce(function (a,b){
+        return a+b;
+    });
+    avg.innerHTML = `среднее значение ${t/arr.length}`;
+})
 
