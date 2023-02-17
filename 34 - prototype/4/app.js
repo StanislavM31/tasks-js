@@ -1,22 +1,23 @@
 /*
-4. На входе объект. Ключи и значения - автоинкремент (генерируется автоматически
-от 1 до n). Написать функцию на поиск в объекте только четных ключей.
+По условию задачи даны инпут и кнопка. Необходимо преобразовать строку в
+CamelCase (примерСтрокиВCamelCase
 */
 
-let obj = {};
+let inp = document.querySelector("input");
+let btn = document.querySelector("button");
+let camel = document.createElement("p");
+let div = document.querySelector('div');
 
-const n = 5;
-
-for (let i = 0; i < n; i++) {
-  obj[i] = i;
-}
-
-console.log(obj);
-let arrayChet = [];
-for (let key in obj) {
-  if (key % 2 == 0) {
-    arrayChet.push(key);
+btn.addEventListener("click", function () {
+  let temp = inp.value.split(" ");
+  let res = [];
+  for (el of temp) {
+    let t = el[0].toUpperCase();
+    let cutWord = el.slice(1, el.length);
+    let tc = t+cutWord;
+    res.push(tc);
   }
-}
+  camel.innerHTML = res.join('');
+  div.appendChild(camel);
+});
 
-console.log(arrayChet);
