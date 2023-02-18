@@ -2,11 +2,13 @@
 По условию задачи даны инпут и кнопка. Необходимо преобразовать строку в
 CamelCase (примерСтрокиВCamelCase
 */
+let p = document.querySelector('p');
 
 let inp = document.querySelector("input");
 let btn = document.querySelector("button");
-let camel = document.createElement("p");
 let div = document.querySelector('div');
+
+let camel = document.createElement("p");
 
 btn.addEventListener("click", function () {
   let temp = inp.value.split(" ");
@@ -19,5 +21,17 @@ btn.addEventListener("click", function () {
   }
   camel.innerHTML = res.join('');
   div.appendChild(camel);
+
+
+  setTimeout(clear, 1500,inp);
+  setTimeout(clear, 1000,p);
 });
+
+function clear(x){
+  if(x.value){
+    x.value = '';
+  } else {
+    div.removeChild(x);
+  }
+}
 
