@@ -4,17 +4,16 @@ surname. Также класс должен иметь метод getАutograph,
 “{name} {surname), с наилучшими пожеланиями”.
  */
 
-    class Singer {
-        constructor(name,surname){
-            this.name = name;
-            this.surname = surname;
-        }
-
-        getAutograph(){
-            return (`${this.name} ${this.surname}, с наилучшими пожеланиями `);
-        }
+class Singer{
+    constructor(n, sn){
+        this.name = n;
+        this.surname = sn;
     }
 
-let singer = new Singer('John','Smith');
+    getАutograph(){
+        return `${this.name} ${this.surname}, с наилучшими пожеланиями`
+    }
+}
 
-console.log(singer.getAutograph());
+let singer = new Singer('John', 'Smith');
+console.log(singer.getАutograph());

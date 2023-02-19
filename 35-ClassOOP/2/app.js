@@ -1,22 +1,31 @@
 /*
-2. [1, 2, 3, 4, 5]. Выведите каждый элемент массива 3 любыми циклами
+2. Реализуйте класс Calculator, который будет хранить в себе 4 метода: сумма чисел,
+разность, произведение, частное. 2 числа передаются в класс, далее вызываеются
+соответствующие функции. Добавить проверки на ввод
 */
 
+class Calculator{
+    constructor(n1,n2){
+        this.num1=+n1;
+        this.num2=+n2;
+    }
 
-const arr = [1, 2, 3, 4, 5];
-
-for(let i =0; i<=arr.length; i++){
-    console.log('i:',i);
+    sum(){
+        return `${this.num1}+${this.num2} = ${this.num1+ this.num2}`;
+    }
+    dif(){
+        return `${this.num1}-${this.num2} = ${this.num1-this.num2}`;
+    }
+    mylti(){
+        return `${this.num1}-${this.num2} = ${this.num1*this.num2}`;
+    }
+    divide(){
+        return `${this.num1}/${this.num2} = ${this.num1/this.num2}`;
+    }
 }
 
-for(let i of arr){
-    console.log(i);
-}
-
-let i = 0;
-
-while(i<arr.length){
-    console.log(i);
-    i++;
-}
-
+let calculator = new Calculator(100, 500);
+console.log(calculator.sum());
+console.log(calculator.dif());
+console.log(calculator.mylti());
+console.log(calculator.divide());
