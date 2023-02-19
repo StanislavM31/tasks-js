@@ -1,18 +1,38 @@
-/* Дан массив с элементами [2, 3, 4, 5]. С помощью 3 циклов найдите произведение
-элементов этого массива. */
-const arr = [2, 3, 4, 5];
-let rez=1;
 /*
-for(let i=0; i<arr.length; i++){
-    rez *= arr[i];
+3. Реализуйте класс WordString, который будет иметь следующие методы: метод
+reverseString, переворачивающий строку, метод upperFirst, возвращающий строку,
+где первая буква заглавная и метод upperEvery, который делает заглавной первую
+букву каждого слова этой строки.
+*/
+
+class WordString{
+    constructor(str){
+        this.string = str;
+    }
+    reverseString(){
+        return `${this.string.split('').reverse().join('')}`;
+    }
+
+    upperFirst(){
+        let temp = this.string.slice(1);
+        return `${this.string[0].toUpperCase()+temp}`
+    }
+    upperEvery(){
+/*         let array = this.string.split(' ');
+        for (let i = 0; i < array.length; i++) {
+            const element = array[i];
+
+        } */
+
+        let array = this.string.split(' ');
+        let arrStr = array.map(function(el){
+            return el[0].toUpperCase() + el.slice(1);
+        })
+        return arrStr.join('');
+    }
 }
-console.log(rez);
- */
 
-let i=0;
-
-do{
-    rez *= arr[i];
-    i++;
-} while ( i<arr.length);
-console.log('rez:',rez);
+let wordString = new WordString(`test test test`);
+console.log(wordString.reverseString());
+console.log(wordString.upperFirst());
+console.log(wordString.upperEvery());
