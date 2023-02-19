@@ -11,7 +11,7 @@ surname. Также класс должен иметь метод getАutograph,
         }
 
         getAutograph(){
-            return (`${name} ${surname}, с наилучшими пожеланиями `);
+            return (`${this.name} ${this.surname}, с наилучшими пожеланиями `);
         }
     }
 
