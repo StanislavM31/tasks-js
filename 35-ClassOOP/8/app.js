@@ -4,28 +4,27 @@
 - возвращает true, если не является - то false
 */
 let m = 'aaa@gmail.com';
-let r = /^([a-z0-9_-]+\.)*[a-z0-9_-]+@[a-z0-9_-]+(\.[a-z0-9_-]+)*\.[a-z]{2,6}$/gm;
+let anothermail = 'aaa@gmail.com';
+
 class Validator{
-    isEmail(mail){
-        this.mail = mail;
-        if(r.test(mail)){
-            return true;
-        } else {
-            return false;
-        }
-    }
-}
-class MegaValidator{
     constructor(mail){
         this.mail = mail;
     }
 
-    isEmail(){
-        return r.test(this.mail)? true:false;
+    isValid(){
+        let r = /^([a-z0-9_-]+\.)*[a-z0-9_-]+@[a-z0-9_-]+(\.[a-z0-9_-]+)*\.[a-z]{2,6}$/gm;
+        if(r.test(this.mail)){
+            return true;
+        }
     }
 }
-const validator = new Validator();
-console.log(validator.isEmail(m));
 
-const megavalidator = new MegaValidator(m);
-console.log(megavalidator.isEmail());
+
+class MegaValidator extends Validator{
+    constructor(mail){
+        super(mail);
+        console.log(this.isValid());
+    }
+}
+let megaValidator = new MegaValidator(anothermail);
+
