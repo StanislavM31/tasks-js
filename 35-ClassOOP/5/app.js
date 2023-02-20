@@ -4,22 +4,30 @@
 если слова являются анаграммами. Добавить проверки на ввод.
 */
 
-class Anagram {
-  constructor(str) {
-    this.str = str;
-    this.isAnagramOrNot = this.isAnagram(str)
+class Anagram{
+  constructor(word){
+    this.word = word;
   }
-  isAnagram(word) {
-    /* this.str = str; */
-    if (word.split("").reverse().join("") == word) {
-      return true;
-    } else {
-      return false;
+}
+class Check{
+  isAnagram(w){
+    try{
+      if(!w.length){
+        throw new Error('пустая строка')
+      }
+      if(w.split('').reverse().join('')==w){
+        return true
+      } else {
+        return false;
+      }
+    } catch(error){
+      alert(error.message);
+      return ['здесь ничего нет']
     }
   }
 }
-let word = prompt("введите анаграмму");
+let word = prompt('enter the anagram');
 let anagram = new Anagram(word);
 console.log(anagram);
-console.log(anagram.isAnagramOrNot);
-console.log(anagram.isAnagram(word));
+let check = new Check()
+console.log(check.isAnagram(anagram.word));
