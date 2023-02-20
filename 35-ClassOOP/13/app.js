@@ -1,16 +1,85 @@
 /*
-13. Дан массив с числами. Числа могут быть положительными и отрицательными.
-Найдите сумму всех положительных элементов массива циклом for of
- */
+13. Реализуйте класс ServerPost. Обязательными функциями считаются функции
+middleware, controller, service, repository. Цепочка взаимодействия между методами
+следующая:
+middleware -> controller -> service -> repository, где:
+middleware – функция валидатор
+controller – функция, принимающая данные. Принимает json
+service – функция проверки на то что с repository вернулось значение
+repository – функция, симулирующая БД. Хранит массив данных. Взаимодействие с
+этим массивом осуществляется только в repository. Массив находится в приложении
+Задание:
+на вход подается JSON вида:
+`{
+"label": "JavaScript", "category": "programmingLanguages", "priority": 1
+}`
+Неоходимо добавить в массив БД объект только в том случае, если нет совпадений
+по label. Если совпадения нет, то в объект клиента добавить ключ id со значением
+label в toLowerCase таким образом, чтобы в БД был запушен объект вида
+{"id": "javascript", "label": "JavaScript", "category": "programmingLanguages", "priority": 1}
+Если совпадение есть – ошибка. Добавить проверки
+*/
 
-let arr = [2, -5, 9, 15, 0, 4, -12, 0, 32, -42, 17, 67];
-console.log(arr);
-let a = 0;
+class ServerPost {
+  middleware() {}
+  controller(object) {
+    try {
+      let resultOfService = this.service(object);
+      return resultOfService;
+    } catch (err) {
+      return err.message;
+    }
+  }
+  service(object) {
+    let result = this.repository(object);
+    return result;
+  }
 
-for( let i=0; i<arr.length; i++){
-  if(arr[i]>0){
-    a+=arr[i];
+  repository(object) {
+    let arr = [
+      {
+        id: "javascript",
+        label: "JavaScript",
+        category: "programmingLanguages",
+        priority: 1,
+      },
+      {
+        id: "typescript",
+        label: "TypeScript",
+        category: "programmingLanguages",
+        priority: 1,
+      },
+      {
+        id: "sql",
+        label: "SQL",
+        category: "programmingLanguages",
+        priority: 2,
+      },
+      {
+        id: "java",
+        label: "Java",
+        category: "programmingLanguages",
+        priority: 3,
+      },
+      { id: "go", label: "GO", category: "programmingLanguages", priority: 3 },
+    ];
+
+    let filtered = arr.filter((el) =>
+      el.label == object.label ? true : false
+    );
+
+    /*  */
+    if (filtered.length) {
+      throw new Error("такой label уже есть");
+    }
+    arr.push({ id: object.label.toLowerCase(), ...object  });
+    return arr;
   }
 }
 
-console.log(a);
+let obj = JSON.parse(`{
+  "label": "COBOL", "category": "programmingLanguages", "priority": 1
+  }`);
+let serverPost = new ServerPost();
+let controller = serverPost.controller(obj);
+console.log(controller);
