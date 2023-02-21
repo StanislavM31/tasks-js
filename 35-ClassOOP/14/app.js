@@ -11,7 +11,7 @@ repository – функция, симулирующая БД. Хранит ма�
 Задание:
 на вход подается JSON вида:
 `{
-{"id": "javascript", "label": "JavaScript", "category": "programmingLanguages", "priority": 1
+  {"id": "javascript", "label": "JavaScript", "category": "programmingLanguages", "priority": 1
 }`
 Необходимо найти id клиента в массиве БД. Если совпадение есть, произвести
 обновление значений для соответствующих ключей.
@@ -19,10 +19,13 @@ repository – функция, симулирующая БД. Хранит ма�
 */
 
 class ServerPut{
-  middleware(){
-    return this.controller();
+  middleware(object){
+    return this.controller(object);
   }
-  controller(){
+  controller(object){
+    let obj = JSON.parse(`{
+      {"id": "javascript", "label": "JavaScript", "category": "programmingLanguages", "priority": 1
+      }`)
     try {
       let data = this.service();
       if ( !data.length){
@@ -31,7 +34,6 @@ class ServerPut{
     } catch (error) {
 
     }
-    return
   }
   service(){
     return this.repository()
@@ -44,9 +46,6 @@ class ServerPut{
       { "id": "java", "label": "Java", "category": "programmingLanguages", "priority": 3 },
       { "id": "go", "label": "GO", "category": "programmingLanguages", "priority": 3 }
       ]
-      let obj = JSON.parse(`{
-        {"id": "javascript", "label": "JavaScript", "category": "programmingLanguages", "priority": 1
-        }`)
 let find = arr.filter((elOfArr)=>{
   if(elOfArr.id == obj.id){
     return elOfArr;
@@ -59,4 +58,5 @@ let find = arr.filter((elOfArr)=>{
 }
 
 let serverPut = new ServerPut();
+serverPut.controller()
 
