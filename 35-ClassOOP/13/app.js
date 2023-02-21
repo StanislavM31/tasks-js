@@ -58,7 +58,6 @@ class ServerPost {
 let data = `{
   "label": "COBOL", "category": "programmingLanguages", "priority": 1
   }`;
-  let d = `{"id": "javascript", "label": "JavaScript", "category": "programmingLanguages", "priority": 1 }`;
 
 let serverPost = new ServerPost();
 let controller = serverPost.controller(data);
