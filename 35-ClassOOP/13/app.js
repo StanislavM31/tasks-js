@@ -21,30 +21,45 @@ label в toLowerCase таким образом, чтобы в БД был зап
 */
 
 class ServerPost {
-    middleware() {
-    }
-    controller() {
-    }
-    service(){
-    }
-   repo(){
-    let arr = [
-        { "id": "javascript", "label": "JavaScript", "category": "programmingLanguages", "priority": 1 },
-        { "id": "typescript", "label": "TypeScript", "category": "programmingLanguages", "priority": 1 },
-        { "id": "sql", "label": "SQL", "category": "programmingLanguages", "priority": 2 },
-        { "id": "java", "label": "Java", "category": "programmingLanguages", "priority": 3 },
-        { "id": "go", "label": "GO", "category": "programmingLanguages", "priority": 3 },
-    ]
-
-    return arr;
-   }
+  middleware() {
   }
+  controller(jsonElement) {
+    try{
+      let object = JSON.parse(jsonElement);
+      return this.service(object);
+    }
+    catch(error){
+      return error.message;
+    }
+  }
+  service(object){
+      return this.repo(object);
+  }
+ repo(object){
+  let arr = [
+      { "id": "javascript", "label": "JavaScript", "category": "programmingLanguages", "priority": 1 },
+      { "id": "typescript", "label": "TypeScript", "category": "programmingLanguages", "priority": 1 },
+      { "id": "sql", "label": "SQL", "category": "programmingLanguages", "priority": 2 },
+      { "id": "java", "label": "Java", "category": "programmingLanguages", "priority": 3 },
+      { "id": "go", "label": "GO", "category": "programmingLanguages", "priority": 3 },
+  ]
+  let filter = arr.filter(elemOfArr=>elemOfArr.label == object.label ? true : false);
 
-  let data = `{
-    "label": "COBOL", "category": "programmingLanguages", "priority": 1
-    }`;
-   
+  if(!filter.length){
+    object = {id:object.label.toLowerCase(), ...object}
+    arr = [object, ...arr] // spread оператор вместо arr.push(object)
+  } else{
+    throw new Error('такой label уже есть')
+  }
+  return arr;
+ }
+}
 
-  let serverPost = new ServerPost();
-  let controller = serverPost.controller(data);
-  console.log(controller);
+let data = `{
+  "label": "COBOL", "category": "programmingLanguages", "priority": 1
+  }`;
+  let d = `{"id": "javascript", "label": "JavaScript", "category": "programmingLanguages", "priority": 1 }`;
+
+let serverPost = new ServerPost();
+let controller = serverPost.controller(data);
+console.log(controller);
