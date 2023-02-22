@@ -21,65 +21,49 @@ label в toLowerCase таким образом, чтобы в БД был зап
 */
 
 class ServerPost {
-  middleware() {}
-  controller(object) {
-    try {
-      let resultOfService = this.service(object);
-      return resultOfService;
-    } catch (err) {
+  middleware() {
+  }
+  controller(jsonElement) {
+    try{
+      let object = JSON.parse(jsonElement);
+      return this.service(object);
+    }
+    catch(error){
+      return error.message;
+    }
+  }
+  service(object){
+    try{
+      return this.repo(object);
+    } catch(err){
       return err.message;
     }
   }
-  service(object) {
-    let result = this.repository(object);
-    return result;
+ repo(object){
+  let arr = [
+      { "id": "javascript", "label": "JavaScript", "category": "programmingLanguages", "priority": 1 },
+      { "id": "typescript", "label": "TypeScript", "category": "programmingLanguages", "priority": 1 },
+      { "id": "sql", "label": "SQL", "category": "programmingLanguages", "priority": 2 },
+      { "id": "java", "label": "Java", "category": "programmingLanguages", "priority": 3 },
+      { "id": "go", "label": "GO", "category": "programmingLanguages", "priority": 3 },
+  ]
+  let filter = arr.filter(elemOfArr=>elemOfArr.label == object.label ? true : false);
+
+  if(!filter.length){
+    object = {id:object.label.toLowerCase(), ...object}
+    arr = [object, ...arr] // spread оператор вместо arr.push(object)
+  } else{
+    throw new Error('такой label уже есть')
   }
-
-  repository(object) {
-    let arr = [
-      {
-        id: "javascript",
-        label: "JavaScript",
-        category: "programmingLanguages",
-        priority: 1,
-      },
-      {
-        id: "typescript",
-        label: "TypeScript",
-        category: "programmingLanguages",
-        priority: 1,
-      },
-      {
-        id: "sql",
-        label: "SQL",
-        category: "programmingLanguages",
-        priority: 2,
-      },
-      {
-        id: "java",
-        label: "Java",
-        category: "programmingLanguages",
-        priority: 3,
-      },
-      { id: "go", label: "GO", category: "programmingLanguages", priority: 3 },
-    ];
-
-    let filtered = arr.filter((el) =>
-      el.label == object.label ? true : false
-    );
-
-    /*  */
-    if (filtered.length) {
-      throw new Error("такой label уже есть");
-    }
-    arr.push({ id: object.label.toLowerCase(), ...object  });
-    return arr;
-  }
+  return arr;
+ }
 }
 
-let obj = JSON.parse(`{
+let data = `{
   "label": "COBOL", "category": "programmingLanguages", "priority": 1
-  }`);
+  }`;
+  let d = `{"id": "javascript", "label": "JavaScript", "category": "programmingLanguages", "priority": 1 }`;
+
 let serverPost = new ServerPost();
-let controller = serverPost.controller(obj);
+let controller = serverPost.controller(data);
 console.log(controller);
