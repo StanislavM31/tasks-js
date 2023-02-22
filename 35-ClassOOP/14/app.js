@@ -22,23 +22,19 @@ class ServerPut{
   middleware(object){
     return this.controller(object);
   }
-  controller(object){
-    let obj = JSON.parse(`{
-      {"id": "javascript", "label": "JavaScript", "category": "programmingLanguages", "priority": 1
-      }`)
+  controller(obj){
+    let object = JSON.parse(obj);
     try {
-      let data = this.service();
-      if ( !data.length){
-        throw new Error('ошибка: совпадения по id нет')
-      }
+      let data = this.service(object);
+      return data;
     } catch (error) {
-
+      error.message;
     }
   }
-  service(){
-    return this.repository()
+  service(object){
+    return this.repository(object)
   }
-  repository(){
+  repository(object){
     let arr = [
       { "id": "javascript", "label": "JavaScript", "category": "programmingLanguages", "priority": 1 },
       { "id": "typescript", "label": "TypeScript", "category": "programmingLanguages", "priority": 1 },
@@ -46,17 +42,20 @@ class ServerPut{
       { "id": "java", "label": "Java", "category": "programmingLanguages", "priority": 3 },
       { "id": "go", "label": "GO", "category": "programmingLanguages", "priority": 3 }
       ]
-let find = arr.filter((elOfArr)=>{
-  if(elOfArr.id == obj.id){
-    return elOfArr;
+let find = arr.filter(function(elOfArr){
+  if(elOfArr.id == object.id){
+    return true;
   }
-
 })
+console.log(find);
 
       return arr;
   }
 }
-
-let serverPut = new ServerPut();
-serverPut.controller()
+let element = `{
+  "label": "COBOL", "category": "programmingLanguages", "priority": 1
+  }`;
+let serverPut = new ServerPut(element);
+let m = serverPut.middleware();
+console.log(m);
 
