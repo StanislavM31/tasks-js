@@ -1,19 +1,36 @@
 /*
-1. Реализуйте класс Singer, который будет иметь следующие свойства: name,
-surname. Также класс должен иметь метод getАutograph, который будет выводить
-“{name} {surname), с наилучшими пожеланиями”.
- */
+1. Реализуйте класс DomHtml, который будет взаимодействовать с DOM по клику на
+кнопку. Класс содержит 4 метода: doPlus, doMinus, doMultiply, doDivide
+*/
 
-class Singer{
-    constructor(n, sn){
-        this.name = n;
-        this.surname = sn;
+class DomHtml{
+    constructor(inp1,inp2){
+        this.inp1=inp1;
+        this.inp2=inp2;
+        this.generateEvent();
     }
 
-    getАutograph(){
-        return `${this.name} ${this.surname}, с наилучшими пожеланиями`
+    doPlus(){
+        const plus = document.querySelector('.plus');
+        plus.innerHTML = this.inp1.value + this.inp2.value;
+    }
+    doMinus(){
+        const minus = document.querySelector('.minus');
+        minus.innerHTML = this.inp1 - this.inp2;
+    }
+    doMyltiply(){
+
+    }
+    doDevide(){
+
+    }
+    generateEvent(){
+        const btn = document.querySelector('.btn');
+        btn.addEventListener('click', ()=>{
+            this.doPlus();
+        })
     }
 }
 
-let singer = new Singer('John', 'Smith');
-console.log(singer.getАutograph());
+let inp1 = document.querySelector('.input1')
+let inp2 = document.querySelector('.input2')

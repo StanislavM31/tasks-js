@@ -1,50 +1,62 @@
 /*
-7. Реализуйте класс ServerById. Обязательными функциями считаются функции
-middleware, controller, service, repository. Цепочка взаимодействия между
-методами следующая:
+7. Реализуйте класс ServerDelete. Обязательными функциями считаются функции
+middleware, controller, service, repository. Цепочка взаимодействия между методами
+следующая:
 middleware -> controller -> service -> repository, где:
 middleware – функция валидатор
 controller – функция, принимающая данные. Принимает json
 service – функция проверки на то что с repository вернулось значение
 repository – функция, симулирующая БД. Хранит массив данных. Взаимодействие с
-этим массивом осуществляется только в repository. Массив находится в
-приложении
+этим массивом осуществляется только в repository. Массив находится в приложении
 Задание:
 на вход подается JSON вида:
 `{
-"id": "javascript"
+"id": 1
 }`
-Необходимо вывести в консоль найденный элемент массива по id если таковой
-имеется. В противном случае бросить исключение. Добавить проверки
-8. Реализуйте класс Validator. У него будет метод isEmail параметром принимает
-строку и проверяет, является ли она корректным емейлом или нет. Если яв
+Необходимо осуществить удаление по id. Если совпадения нет – ошибка. Добавить
+проверки
 */
-/* { "id": "javascript", "label": "JavaScript", "category": "programmingLanguages", "priority": 1 },
-{ "id": "typescript", "label": "TypeScript", "category": "programmingLanguages", "priority": 1 },
-{ "id": "sql", "label": "SQL", "category": "programmingLanguages", "priority": 2 },
-{ "id": "java", "label": "Java", "category": "programmingLanguages", "priority": 3 },
-{ "id": "go", "label": "GO", "category": "programmingLanguages", "priority": 3 }, */
-class ServerById{
-  middleware(){
-    const middleware = this.controller();
-    return middleware;
-  }
-  controller(){
-    const controller = this.service();
-    return controller;
-  }
-  service(){
-    const repository = this.repository();
-    return repository;
-  }
-  repository(){
-    let string = `{
-      "id": "javascript", "label": "JavaScript", "category": "programmingLanguages", "priority": 1
-      }`;
 
-    return JSON.parse(string);
+class ServerPut{
+  middleware(object){
+    if(!object.hasOwnProperty('id')){
+      throw new Error('нет такого ключа (id)')
+    }
+    if(typeof object.id == 'string'){
+      throw new Error('id это строка. Данные не валидны')
+    }
+  }
+  controller(json){
+    try {
+      let object = JSON.parse(json);
+      this.middleware(object);
+      return this.service(object)
+    } catch (error) {
+      return error.message;
+    }
+  }
+  service(object){
+    return this.repository(object)
+  }
+  repository(object){
+    let arr = [
+      { "id": 1, "name": "Yesenia", "age": 22 },
+      { "id": 2, "name": "Hanna", "age": 22 },
+      { "id": 3, "name": "Stanislau", "age": 25 },
+      { "id": 4, "name": "German", "age": 18 },
+      { "id": 5, "name": "Maria", "age": 27 }
+    ]
+    let filter = arr.filter(el=>el.id !== object.id?true:false);
+    if(filter.length == arr.length){
+      throw new Error('нет такого  id');
+    }
+    return filter;
   }
 }
 
-const serverById = new ServerById();
-console.log(serverById.controller());
+let obj = `{
+  "id": 10
+  }`;
+
+let serverPut = new ServerPut()
+console.log(serverPut.controller(obj));

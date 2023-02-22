@@ -1,32 +1,62 @@
 /*
-6. Реализуйте класс ServerGetAll. Обязательными функциями считаются функции
-controller, service, repository. Цепочка взаимодействия между методами
+6. Реализуйте класс ServerPut. Обязательными функциями считаются функции
+middleware, controller, service, repository. Цепочка взаимодействия между методами
 следующая:
-controller -> service -> repository, где:
+middleware -> controller -> service -> repository, где:
+middleware – функция валидатор
 controller – функция, принимающая данные. Принимает json
 service – функция проверки на то что с repository вернулось значение
 repository – функция, симулирующая БД. Хранит массив данных. Взаимодействие с
-этим массивом осуществляется только в repository. Массив находится в
-приложении
+этим массивом осуществляется только в repository. Массив находится в приложении
 Задание:
-Необходимо вывести в консоль весь массив
+на вход подается JSON вида:
+`{
+"id": 1, "name": "Test", "age": 1
+}`
+Необходимо найти id клиента в массиве БД. Если совпадение есть, произвести
+обновление значений для соответствующих ключей.
+Если совпадения по id нет – ошибка. Добавить проверки
 */
 
-class ServerGetAll {
-  controller() {
-    let controller = this.service();
-    return controller;
+class ServerPut {
+  middleware() {
+
   }
-  service() {
-    let srv = this.repository();
-    srv = JSON.parse(srv);
-    return srv;
+  controller(json) {
+    try {
+      let object = JSON.parse(json);
+      let service = this.service(object);
+      return service;
+    } catch (error) {
+      return error.message;
+    }
   }
-  repository() {
-    let repo = `{"id":"javascript", "label":"JavaScript", "category": "programmingLanguages","priority": 1}`;
-    return repo;
+  service(object) {
+    let repository = this.repository(object);
+    return repository;
+  }
+  repository(object) {
+    let arr = [
+      { "id": 1, "name": "Yesenia", "age": 22 },
+      { "id": 2, "name": "Hanna", "age": 22 },
+      { "id": 3, "name": "Stanislau", "age": 25 },
+      { "id": 4, "name": "German", "age": 18 },
+      { "id": 5, "name": "Maria", "age": 27 }
+      ]
+      let filter = arr.filter(elOfArr=>elOfArr.id!==object.id?true:false);
+      if(filter.length == arr.length){
+        throw new Error('ошибка: такого id нет')
+      } else{
+        filter.push(object);
+      }
+
+      return filter;
   }
 }
 
-let serverGetAll = new ServerGetAll();
-console.log(serverGetAll.controller());
+let obj = `{
+  "id": 1, "name": "Test", "age": 1
+  }`;
+
+let serverPut = new ServerPut();
+console.log(serverPut.controller(obj));
