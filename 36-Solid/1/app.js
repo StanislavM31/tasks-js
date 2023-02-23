@@ -3,34 +3,29 @@
 кнопку. Класс содержит 4 метода: doPlus, doMinus, doMultiply, doDivide
 */
 
-class DomHtml{
-    constructor(inp1,inp2){
-        this.inp1=inp1;
-        this.inp2=inp2;
-        this.generateEvent();
-    }
-
-    doPlus(){
-        const plus = document.querySelector('.plus');
-        plus.innerHTML = this.inp1.value + this.inp2.value;
-    }
-    doMinus(){
-        const minus = document.querySelector('.minus');
-        minus.innerHTML = this.inp1 - this.inp2;
-    }
-    doMyltiply(){
-
-    }
-    doDevide(){
-
-    }
-    generateEvent(){
-        const btn = document.querySelector('.btn');
-        btn.addEventListener('click', ()=>{
-            this.doPlus();
-        })
-    }
+class DomHtml {
+  constructor(input1, input2) {
+    this.input1 = input1;
+    this.input2 = input2;
+    this.generateEvent();
+  }
+  doPlus() {
+    let res = document.querySelector('.result')
+    res.innerHTML = +this.input1.value + +this.input2.value;
+  }
+  doMinus() {}
+  doMyltiply() {}
+  doDivide() {}
+  generateEvent() {
+    let btn = document.querySelector("button");
+    btn.addEventListener("click", () => {
+        this.doPlus()
+    });
+  }
 }
 
-let inp1 = document.querySelector('.input1')
-let inp2 = document.querySelector('.input2')
+let inp1 = document.querySelector(".input1");
+let inp2 = document.querySelector(".input2");
+
+let domHTML = new DomHtml(inp1, inp2);
+
