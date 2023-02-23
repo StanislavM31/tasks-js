@@ -3,8 +3,16 @@
 телефона.
 */
 
-class validator{
-  isPhone(d){
-    
+class Validator {
+  isPhone(d) {
+    let reg = new RegExp("/^/(+375)$/gm");
+
+    return reg.test(d);
   }
 }
+
+let phone = "+375";
+let validator = new Validator();
+console.log(validator.isPhone(phone));
+
+

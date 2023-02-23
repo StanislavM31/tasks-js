@@ -19,3 +19,4 @@ function isValid(string_) {
 
 let result = isValid(str);
 console.log(result);
+
