@@ -14,20 +14,26 @@ class DomHtml {
     console.log(this.res);
     this.res[0].innerHTML =  `результат сложения: ${+this.input1.value + +this.input2.value}`;
     console.log(this.res[0]);
-    console.log(this.res[0].value);
   }
   doMinus() {
     this.res[1].innerHTML =  `результат вычитания: ${+this.input1.value - +this.input2.value}`;
     console.log(this.res[1]);
-    console.log(this.res[1].value);
   }
-  doMyltiply() {}
-  doDivide() {}
+  doMyltiply() {
+    this.res[2].innerHTML =  `результат умножения: ${+this.input1.value * +this.input2.value}`;
+    console.log(this.res[2]);
+  }
+  doDivide() {
+    this.res[3].innerHTML =  `результат деления: ${+this.input1.value / +this.input2.value}`;
+    console.log(this.res[3]);
+  }
   generateEvent() {
     let btn = document.querySelector("button");
     btn.addEventListener("click", () => {
         this.doPlus();
         this.doMinus();
+        this.doMyltiply();
+        this.doDivide();
     });
   }
 }
