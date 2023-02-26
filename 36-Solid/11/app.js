@@ -5,13 +5,13 @@
 
 class Validator {
   isPhone(d) {
-    let reg = new RegExp("/^/(+375)$/gm");
+    let reg = new RegExp("/^phone$/gm");
 
     return reg.test(d);
   }
 }
 
-let phone = "+375";
+let phone = "phone";
 let validator = new Validator();
 console.log(validator.isPhone(phone));
 
