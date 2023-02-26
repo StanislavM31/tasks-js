@@ -1,14 +1,25 @@
+
 /*
-Дан массив 2, 5, 9, 15, 0, 4. Выведите все числа кратные 5 циклом while
+12. Реализуйте класс Hashtag. В него передается число n – количество элементов
+массива. На основании числа формируется динамический массив из n элементов
+внутри класса. Создать функцию doHashtag, заполняющую новый массив из
+элементов, каждое значение которого имеет вид #name
+
  */
 
-let arr = [2, 5, 9, 15, 0, 4];
-
-let i = arr.length-1;
-
-while(i!==0){
-  if(arr[i]!==0 && arr[i]%5==0){
-    console.log(arr[i]);
+class Hashtag{
+  constructor(n){
+      this.n = n;
+          let array = [];
+          for (let i = 0; i < this.n; i++) {
+              const element = Math.floor(Math.random()*100);
+              array.push(element)
+          }
+          return array;
   }
-  i--;
+
 }
+
+let hashtag = new Hashtag(5);
+console.log(hashtag);
+
