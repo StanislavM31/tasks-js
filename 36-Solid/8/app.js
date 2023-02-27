@@ -7,9 +7,11 @@
 class DomHtml{
     middleware(uuid){
         try{
-            if(!/^[0-9]{3}\w[0-9]{4}-\w\d\d\w-\d\d\w\d-\w\d\d\d-\d{12}$/gm.test(uuid)) throw new Error ('не валидный UUID');
+            if(!/^[0-9]{3}\w[0-9]{4}-\w\d\d\w-\d\d\w\d-\w\d\d\d-[0-9]{12}$/gm.test(uuid)) throw new Error ('не валидный UUID');
 
                 return true;
+               // let reg = new RegExp(/^[\w]{8}-[\w]{4}]-\w\d\d\w-\d\d\w\d-\w\d\d\d-[0-9]{12}$/gm);
+                return reg.test(uuid);
 
         }catch(err){
             return err.message;
@@ -29,7 +31,7 @@ btnPut.addEventListener('click', ()=>{
     inputTag.value = uuid;
 })
 btnCheck.addEventListener('click', ()=>{
-    console.log(domHtml.middleware(u));
+    console.log(domHtml.middleware(inputTag.value));
 })
 
 btnClear.addEventListener("click",()=>{
