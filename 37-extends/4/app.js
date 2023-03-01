@@ -1,27 +1,55 @@
-/* 4. Заполнять массив числами бесконечно до тех пор, пока длина массива не будет
-равна 5. Вывести массив в консоль (цикл for, while) */
-let array1 = [];
-let array2 = [];
+/*
+3. Реализовать следующие классы Круг, Треугольник и Квадрат. Каждый экземпляр
+класса должен содержать свойства Площадь, Периметр и Имя (свойства
+родительского класса). Создвать массив из фигур и вывести всю информацию о
+фигурах в консоль. Площадь и периметр должны рассчитываться по
+математическим формулам. Класс Figure содержит поля:
+p = 3.14
+r = radius
+a - side
+h - height
+Дочерние классы содержаь геттеры на получение площади
+*/
 
+class Figure{
+  name;
+  P = 3.14;
+  r;
+  a;
+  h;
 
-let i = 0;
-
-while (array1.length !== 5) {
-  array1.push(i);
-  i++;
+  setName = (n) => this.name = n;
+  setRadius = (radius) => this.r = radius;
+  setA = (side) => this.a = side;
+  setH = (height) => this.h = height;
+  /* getName = () => this.name;
+  getArea = () => this.area;
+  getPerimeter = () => this.perimeter; */
 }
 
-console.log(array1);
-
-for (let i =0; i<20; i++){
-/* for (let i =0; ; i++){ */
-    while (array2.length!==5) {
-        array2.push(i);
-        console.log(i);
-    }
-    if(i>20)
-        break;
-
+class Circle extends Figure{
+  getSquare = () => `${this.name}: ${this.P * this.r**2}`;
+}
+class Triangle extends Figure{
+  getSquare = () => `${this.name}: ${1/2 * this.h * this.a}`;
+}
+class Square extends Figure{
+  getSquare = () => `${this.name}: ${this.a **2}`;
 }
 
-console.log(array2);
+let circle = new Circle();
+circle.setName('круг');
+circle.setRadius(3);
+console.log(circle.getSquare());
+console.log('-----');
+let triangle = new Triangle ();
+triangle.setName('треугольник');
+triangle.setA(3);
+triangle.setH(2);
+console.log(triangle.getSquare());
+console.log('-----');
+let square = new Square();
+square.setName('квадрат');
+square.setA(10);
+console.log(square.getSquare());
+
