@@ -52,4 +52,5 @@ let square = new Square();
 square.setName('квадрат');
 square.setA(10);
 console.log(square.getSquare());
+console.log('-----');
 
