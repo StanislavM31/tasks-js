@@ -12,14 +12,14 @@
 class Worker{
     constructor(name,surname){
         this.name = name;
-        this.name = surname;
+        this.surname = surname;
     }
     getInfoWorker(){
-        return `${name} ${surname}`;
+        return `${this.name} ${this.surname}`;
     }
 }
 
-class Singer extends Worker(){
+class Singer extends Worker{
     constructor(name,surname,years, birth, style) {
         super(name,surname);
         this.years=years;
@@ -28,10 +28,9 @@ class Singer extends Worker(){
     }
     getInfo(){
         super.getInfoWorker();
-        return `${name$},${surname$},${years}, ${birth}, ${style}`
+        return `${this.name},${this.surname},${this.years}, ${this.birth}, ${this.style}`
     }
 }
 
-let singer = new Singer();
-singer('John','Sina', 2005, '31.01.1989', 'wresling');
-console.log(singer.getInfo);
+let singer = new Singer('John','Sina', 2005, '31.01.1989', 'wresling');
+console.log(singer.getInfo());
