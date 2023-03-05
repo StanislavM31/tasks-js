@@ -8,29 +8,27 @@
 расширяет его, отображая в консоль информацию о певце: years, birth, style.
 Необходимо вызвать метод getInfo из 2 экземпляров worker, singer
 */
-
-class Worker{
-    constructor(name,surname){
-        this.name = name;
-        this.surname = surname;
-    }
-    getInfoWorker(){
-        return `${this.name} ${this.surname}`;
-    }
+class Worker {
+  constructor(name, surname) {
+    this.name = name;
+    this.surname = surname;
+  }
+  getInfo() {
+    return `${this.name} ${this.surname}`;
+  }
 }
 
-class Singer extends Worker{
-    constructor(name,surname,years, birth, style) {
-        super(name,surname);
-        this.years=years;
-        this.birth=birth;
-        this.style=style;
-    }
-    getInfo(){
-        super.getInfoWorker();
-        return `${this.name},${this.surname},${this.years}, ${this.birth}, ${this.style}`
-    }
+class Singer extends Worker {
+  constructor(name, surname, years, birth, style) {
+    super(name, surname);
+    this.years = years;
+    this.birth = birth;
+    this.style = style;
+  }
+  getInfo() {
+    return `${this.name} ${this.surname} ${this.years} ${this.birth} ${this.style}`;
+  }
 }
 
-let singer = new Singer('John','Sina', 2005, '31.01.1989', 'wresling');
+const singer = new Singer("Michael", "Jackson", 1970, 1957, "pop");
 console.log(singer.getInfo());
