@@ -4,3 +4,15 @@
 массив из отфильтрованных значений, где строка начинается на [a, h].
 [“ann”, “school”, “hschool”, “borabora”] -> [“ann”, “hschool”]
 */
+
+let arr = [];
+let l = +prompt("ввведите размер массива");
+
+for (let i = 0; i < l; i++) {
+    const element = +prompt("ввведите элемент");
+    arr.push(element);
+}
+
+function newArr(arr_){
+
+}

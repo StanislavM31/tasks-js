@@ -1,11 +1,41 @@
 /*
-2. На входе строка в виде пароля. Необходимо написать функцию на проверку, что
-пароль является надежным (содержит хотя бы 1 букву в большом регистре, числа,
-буквы, символ, длина не менее 8 символов)
+2. На входе n – количество элементов массива. Далее производится заполнение
+массива с клавиатуры. Необходимо создать функцию возвращающую новый
+массив из элементов, каждое значение которого имеет вид #name.
+[“hschool”, “company”] -> [“#hschool”, “#company”]
+
 */
 
-let pwd = 'ej65^kjCId3';
 
-function isValid(){
-    
+function createArr(){
+    let l = +prompt('length of arr...');
+    let arr = [];
+    for (let i = 0; i < l; i++) {
+        const element = prompt('put the element');
+        arr.push(element);
+    }
+    return arr;
 }
+
+function doHashTag(array){
+
+    try {
+        isValid(array);
+        let newArr = [];
+        for (let i = 0; i < array.length; i++) {
+            const element = "#"+array[i];
+            newArr.push(element);
+        }
+        return newArr;
+    } catch (error) {
+        return error.message;
+    }
+}
+function isValid(array){
+    array.forEach(element => {
+        if(!isNaN(element)) throw new Error('Это чИслО');
+    });
+}
+let temp = createArr();
+let t = doHashTag(temp);
+console.log(t);
