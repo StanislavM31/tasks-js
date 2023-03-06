@@ -1,21 +1,23 @@
 /*
-3. Вычислите сумму массива целых чисел статичного массива используя рекурсию
+3. Написать функцию на подсчет количества пар ключ значение в объекте. Добавить
+проверки
 */
-let arr_ = [1,2,3,4,5,6,7,8,9,10,11];
-let i_ = 0;
-let c_ = 0;
 
-function count(arr, i, c) {
+let object = {
+  isValid: true,
+  id: 123,
+  lg: "english",
+};
 
-    if(i>arr.length-1){
-        return c;
-    } else {
-        c+=arr[i];
-        console.log(c);
-        i++;
-        return count(arr, i, c)
-    }
+function check(obj) {
+  try {
+    let arr = Object.keys(obj);
+    if(!arr.length) throw new Error('пустой обьект');
+    return arr.length;
+  } catch (error) {
+    return error.message;
+  }
 }
 
-let a = count(arr_, i_, c_);
-console.log(a);
+let t = check(object);
+console.log(t);
