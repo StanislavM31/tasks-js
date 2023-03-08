@@ -1,20 +1,35 @@
 /*
-Пользователь вводит 2 числа от 0 до 10. Сложите переменные так, чтобы в
-результате получилось выражение: “I’m хх". Проверки на ввод только чисел.
-Проверки на ввод чисел до 10. Если первое число – 0, то опустить его
+14. 4. Наследование. Работа с геттерами и сеттерами. Классы Person и Customer.
+Напишите класс Person с атрибутами данных для имени, фамилии. Затем
+напишите класс Customer, который является подклассом класса Person. Класс
+Customer должен иметь поле телефонного номера человека. Продемонстрируйте
+экземпляр класса Customer вызвав геттеры собственного класса и суперкласса
 */
-let a = prompt('введите число1 от 0 до 10');
-let b = prompt('введите число2 от 0 до 10');
 
-
-if(isNaN(a) || isNaN(b)){
-    console.log('ошибка: вы должны ввести числа')
-} else {
-    if(a||b>9){
-        console.log('числа должны быть меньше 10');
-    } else {
-
-        console.log(`${a+''+b}`);
-
-    }
+class Person {
+  setName(name) {
+    this.name = name;
+  }
+  getName() {
+    return this.name;
+  }
+  setSurname(surname) {
+    this.surname = surname;
+  }
+  setSurname() {
+    return this.surname;
+  }
 }
+class Customer extends Person {
+    setPhone(phone) {
+        this.phone = phone;
+    }
+    getPhone() {
+        return this.phone;
+    }
+};
+let customer = new Customer();
+customer.setName("Иван");
+customer.setSurname("Иванов");
+customer.setPhone('+375297756871');
+console.log(customer);

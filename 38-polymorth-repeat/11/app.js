@@ -13,7 +13,7 @@ class Validator{
         this.mail = m;
     }
     isMail(){
-        return (/^[a-zA-Z0-9]+.[\w]+.+[\w]+$/g.test(this.mail));
+        return (/^[a-zA-Z0-9]+.[\w]+.+[\w]+$/gm.test(this.mail));
     }
 }
 
