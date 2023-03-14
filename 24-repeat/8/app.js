@@ -1,5 +1,15 @@
-/*Найдите квадратный корень из 245. Предварительно изучите модуль Math и в
-отдельности Math.sqrt
- */
+/*
+Продемонстрируйте пример замыкания;
+*/
 
-console.log(Math.sqrt(245));
+function cloasure(){
+    let myltiply = 5;
+    return (a)=>{
+        myltiply*=a;
+        console.log(myltiply);
+    }
+}
+
+let foo = cloasure();
+
+foo(10);
