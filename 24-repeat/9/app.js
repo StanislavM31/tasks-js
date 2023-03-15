@@ -1,6 +1,14 @@
-/* Даны числа 4, -2, 5, 19, -130, 0, 10. Найдите минимальное и максимальное число.
-Предварительно изучите модуль Math и в отдельности Math.min и Math.max */
+/*
+9. Продемонстрируйте пример рекурсии
+*/
 
 
-console.log(Math.max(4, -2, 5, 19, -130, 0, 10));
-console.log(Math.min(4, -2, 5, 19, -130, 0, 10));
+
+function factorial(n){
+    if(n<=1){
+        return 1;
+    }
+    return n*factorial(n-1);
+}
+
+console.log(factorial(6));
