@@ -1,21 +1,16 @@
 /*
-
+11. Напишите функцию, которая при каждом вызове своего возвращаемого значения
+будет генерировать и возвращать рандомное число
 */
 
-function recursion(){
+let i = 0;
 
-    let f = recursion() {
-        let num = 0;
-        return f() {
-            num++;
-            return num;
-        }
+function foo(x){
+    while(i<x){
+        i++;
+        console.log(Math.floor(Math.random()*100));
+        return foo(x);
     }
 }
 
-    let func = recursion();
-
-    console.log(func());
-console.log(func());
-console.log(func());
-console.log(func());
+foo(5);
