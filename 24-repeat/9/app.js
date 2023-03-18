@@ -11,4 +11,19 @@ function factorial(n){
     return n*factorial(n-1);
 }
 
-console.log(factorial(6));z
+console.log(factorial(6));
+
+/* количество вызовов */
+
+function foo(n){
+    if(n<1){
+        console.log(0);
+    } else{
+        n--;
+        console.log(n);
+        foo(n);
+    }
+}
+
+
+console.log(foo(10));
