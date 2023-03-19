@@ -5,8 +5,4 @@
 • Измените значение свойства name на hschool
 • Удалите свойство name из объекта
  */
-let obj = {};
 
-obj.id = 1;
-
-console.log(obj);
