@@ -9,4 +9,13 @@ let obj = {};
 
 obj.id = 1;
 obj.name = 'udemy';
+
+console.log(obj);
+
+obj.name = 'hschool';
+
+console.log(obj);
+
+delete obj.name;
+
 console.log(obj);
