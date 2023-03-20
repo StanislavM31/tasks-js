@@ -10,11 +10,11 @@ let obj = {};
 obj.id = 1;
 obj.name = 'udemy';
 
-console.log(obj);
+console.log(obj.name);
 
 obj.name = 'hschool';
 
-console.log(obj);
+console.log(obj.name);
 
 delete obj.name;
 
