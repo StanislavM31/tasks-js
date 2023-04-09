@@ -1,22 +1,21 @@
 /*
-2. [1, 2, 3, 4, 5]. Выведите каждый элемент массива 3 любыми циклами
+2. Вы вводите числа в поле для ввода формируя массив.
+Необходимо отобразить массив, а также отдельно
+все четные элементы этого массива и нечетные
 */
 
+let input = document.querySelector('input');
+let btn = document.querySelector('button');
+let array = document.querySelector('.array');
+let chet = document.querySelector('.chet');
+let nechet = document.querySelector('.nechet');
+let everyInp = [];
 
-const arr = [1, 2, 3, 4, 5];
-
-for(let i =0; i<=arr.length; i++){
-    console.log('i:',i);
-}
-
-for(let i of arr){
-    console.log(i);
-}
-
-let i = 0;
-
-while(i<arr.length){
-    console.log(i);
-    i++;
-}
+btn.addEventListener('click', function(){
+    everyInp.push(input.value);
+    array.innerHTML = everyInp;
+    input.value = '';
+    chet.innerHTML = everyInp.filter(elem=>elem%2==0);
+    nechet.innerHTML = everyInp.filter(elem=>elem%2==1);
+});
 
