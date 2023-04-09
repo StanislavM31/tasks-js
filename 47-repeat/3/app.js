@@ -1,18 +1,21 @@
-/* Дан массив с элементами [2, 3, 4, 5]. С помощью 3 циклов найдите произведение
-элементов этого массива. */
-const arr = [2, 3, 4, 5];
-let rez=1;
-/*
-for(let i=0; i<arr.length; i++){
-    rez *= arr[i];
-}
-console.log(rez);
- */
 
-let i=0;
+// 3. Вы вводите числа в поле для ввода формируя и отображая массив.
+// Необходимо также отображать только уникальные значения массива
+// [1, 1, 4, 2, 3, 3] -> [4, 2]
 
-do{
-    rez *= arr[i];
-    i++;
-} while ( i<arr.length);
-console.log('rez:',rez);
+let input = document.querySelector('input');
+let btn = document.querySelector('button');
+let array = document.querySelector('.array');
+let uniq = document.querySelector('.chet');
+let everyInp = [];
+
+btn.addEventListener('click', function(){
+    everyInp.push(input.value);
+    array.innerHTML = everyInp;
+    
+})
+
+
+
+
+
