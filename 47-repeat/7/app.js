@@ -1,13 +1,18 @@
 /*
-7. Дан массив с элементами [1, 2, 3, 4, 5]. С помощью цикла for of найдите сумму
-элементов этого массива
+7. Вы вводите числа в поле для ввода формируя и отображая массив.
+Необходимо вывести все числа кратные 3
+*/
 
- */
+let inputTag = document.querySelector('input');
+let btn = document.querySelector('button');
+let p = document.querySelector('p');
+let arr = [];
+let temp = [];
 
-let arr= [1, 2, 3, 4, 5];
-let sum = 0;
-for (let i=0;i<arr.length;i++){
-  sum +=arr[i];
-}
+btn.addEventListener('click', ()=>{
+  arr.push(inputTag.value);
+  let temp = arr.filter(el=> el%3==0);
+  p.innerHTML = `[ ${arr} ] %3: ->[ ${temp} ]`;
 
-console.log(sum);
+})
+
