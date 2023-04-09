@@ -20,7 +20,7 @@ btn.addEventListener('click', function(){
         }
     }
     array.innerHTML = `#[ ${arr} ] -> [ ${arrUniq} ]`;
-})
+});
 
 
 
