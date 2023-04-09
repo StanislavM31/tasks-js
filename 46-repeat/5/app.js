@@ -5,23 +5,25 @@
  */
 
 class Client{
-    doRegistration(array, mail, pwd){
-
-        this.array[0] = this.mail;
-        this.array.push(this.pwd);
-        return this.array;
+    doRegistration(){
+        let inputMail = document.querySelector('.input_mail');
+        let inputPwd = document.querySelector('.pwd');
+        return `${inputMail.value} ${inputPwd.value}`;
     }
 }
 class Server{
-    constructor(){
-        let arr = [];
+    doServer(){
+        let s = [];
+        return s;
     }
 }
 
-let inputmail = document.querySelector('.input_mail');
-let inputpwd = document.querySelector('.pwd');
+let inputmail = new Client;
+let date = inputmail.doRegistration();
+console.log(date);
 let storage = new Server();
-console.log(storage);
-let client = new Client();
-client.doRegistration(inputmail.value, inputpwd.value, storage);
+let keep = storage.doServer();
+keep.push(date);
+console.log(keep);
+
 
