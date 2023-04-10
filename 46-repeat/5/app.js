@@ -8,14 +8,23 @@ class Client{
     doRegistration(){
         let inputMail = document.querySelector('.input_mail');
         let inputPwd = document.querySelector('.pwd');
-        return `${inputMail.value} ${inputPwd.value}`;
+        /* return `${inputMail.value} ${inputPwd.value}`; */
+        let storage = new Server();
+        storage.controller({
+            email: inputMail.value,
+            pwd: inputPwd.value
+        })
     }
 }
 class Server{
-    doServer(){
+    controller(obj){
         let s = [];
+        s.push(obj)
         return s;
     }
+    //midleware
+    // controller
+    //repo
 }
 
 let inputmail = new Client;
