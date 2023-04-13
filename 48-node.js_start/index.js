@@ -1,3 +1,4 @@
+const { response } = require("express");
 const express = require("express");
 const app = express();
 const port = 3000;
@@ -25,7 +26,7 @@ app.get("/contact", (request, response) => {
 воспользоваться деструктуризацией из request.params)
 */
 
-app.get(`/test/:id/:name/hi`, (request, response)=>{
+/* app.get(`/test/:id/:name/hi`, (request, response)=>{
     const{
         id,
         name
@@ -39,7 +40,7 @@ app.get(`/:id`, (request, response)=>{
     const arr = [1,2,3,4,5,6];
     let wraper = [];
     let temp = [];
-   
+
     for (let i = 0; i < arr.length; i++) {
         temp.push(arr[i]);
 
@@ -50,17 +51,61 @@ app.get(`/:id`, (request, response)=>{
 
     }
     response.send(wraper);
-})
+}) */
 
+/* 8. Создать обработчик маршрута get с url: "/:id “. Необходимо получить значение id.
+На сервере хранится массив из чисел. Напишите функцию, которая разделяет
+массив на части заданного размера. Необходимо вернуть клиенту массив */
+/* app.get(`/:id`, (request, response)=>{
+    const {
+        id
+    } = request.params;
+    const arr = [1,2,3,4,5,6];
+    let wraper = [];
+    let temp = [];
+
+    for (let i = 0; i < arr.length; i++) {
+        temp.push(arr[i]);
+
+        if(temp.length == id){
+            wraper.push(temp);
+            temp = [];
+        }
+
+    }
+    response.send(wraper);
+}) */
+/*
+9. Создать обработчик маршрута get с url: "/:id “. Необходимо получить значение id.
+На сервере хранится массив объектов, в каждом из которых есть поле id int.
+Напишите функцию, которая находит по id объект. Необходимо вернуть клиенту
+объект
+*/
+app.get('/:id', (req, res)=>{
+    const {
+        id
+    } = req.params;
+    let arrObj = [
+        {1: 'яблоки'},
+        {2: 'груши'},
+        {3: 'малина'},
+        {4: "черника"},
+        {5: 'арбуз'},
+        {6: "перец"},
+        {7: "огурцы"},
+    ];
+    const{
+        1: фрукт = "яблоко"
+    } = arrObj;
+
+    res.send(`вернулось значение ${arrObj[1]}`);
+})
 app.listen(port, ()=>{
     console.log(`  ---------------------------------`);
     console.log(` |- server is running on port ${port} -|` );
     console.log(`  ---------------------------------`);
 });
 
-/* 8. Создать обработчик маршрута get с url: "/:id “. Необходимо получить значение id.
-На сервере хранится массив из чисел. Напишите функцию, которая разделяет
-массив на части заданного размера. Необходимо вернуть клиенту массив */
 
 
 
