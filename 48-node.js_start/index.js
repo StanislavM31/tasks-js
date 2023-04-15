@@ -1,4 +1,3 @@
-const { response } = require("express");
 const express = require("express");
 const app = express();
 const port = 3000;
@@ -32,8 +31,9 @@ app.get("/contact", (request, response) => {
         name
     }  = request.params;
     response.send([id,name]);
-})
-app.get(`/:id`, (request, response)=>{
+}) */
+
+/* app.get(`/:id`, (request, response)=>{
     const {
         id
     } = request.params;
@@ -81,25 +81,39 @@ app.get(`/:id`, (request, response)=>{
 Напишите функцию, которая находит по id объект. Необходимо вернуть клиенту
 объект
 */
-app.get('/:id', (req, res)=>{
+ app.get('/:id', (request, response)=>{
     const {
         id
-    } = req.params;
-    let arrObj = [
-        {1: 'яблоки'},
-        {2: 'груши'},
-        {3: 'малина'},
-        {4: "черника"},
-        {5: 'арбуз'},
-        {6: "перец"},
-        {7: "огурцы"},
-    ];
-    const{
-        1: фрукт = "яблоко"
-    } = arrObj;
+    } = request.params;
+    console.log(id);
 
-    res.send(`вернулось значение ${arrObj[1]}`);
+    let arrObj = [
+        {id: 'яблоки'},
+        {id: 'груши'},
+        {id: 'малина'},
+        {id: "черника"},
+        {id: 'арбуз'},
+    ];
+/*     let count = 0;
+    let filtered = arrObj.filter(el=>{
+        if(el.count==id){
+            return el.count;
+        }
+    }
+    ) */
+    let temp = [];
+    for(let i =0; i<arrObj.length; i++){
+        if(i == id){
+            temp.push(arrObj.i);
+        }
+    }
+    console.log(arrObj[id]);
+    let {id:фрукт} = arrObj[id];
+    response.send(`вернулось значение ${фрукт}`); //деструктуризация
+    /* response.send(`вернулось значение ${arrObj[id].id}`); работает */
+    /* response.send(`вернулось значение ${arrObj[id]}`); // [object Object] */
 })
+
 app.listen(port, ()=>{
     console.log(`  ---------------------------------`);
     console.log(` |- server is running on port ${port} -|` );
