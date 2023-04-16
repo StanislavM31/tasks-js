@@ -85,7 +85,7 @@ app.get("/contact", (request, response) => {
     const {
         id
     } = request.params;
-    console.log(id);
+    console.log('id', id);
 
     let arrObj = [
         {id: 'яблоки'},
@@ -102,16 +102,24 @@ app.get("/contact", (request, response) => {
     }
     ) */
     let temp = [];
-    for(let i =0; i<arrObj.length; i++){
+    for(let i = 0; i<arrObj.length; i++){
         if(i == id){
-            temp.push(arrObj.i);
+            temp.push(arrObj.i); //работает в консоли VScode
         }
     }
-    console.log(arrObj[id]);
+    let filtered = arrObj.filter(el=>{
+        if(el.id == id){
+            return el;
+        }
+    })
+
+    console.log('temp:', temp);
+    console.log('filtered', filtered);
+    console.log('arrObj[id]:', arrObj[id]);
     let {id:фрукт} = arrObj[id];
     response.send(`вернулось значение ${фрукт}`); //деструктуризация
     /* response.send(`вернулось значение ${arrObj[id].id}`); работает */
-    /* response.send(`вернулось значение ${arrObj[id]}`); // [object Object] */
+    /* response.send(`вернулось значение ${arrObj[id]}`); // [object Object] ??*/
 })
 
 app.listen(port, ()=>{
