@@ -5,15 +5,19 @@ surname. Также класс должен иметь метод getАutograph,
  */
 
 class Singer{
-    constructor(n, sn){
-        this.name = n;
-        this.surname = sn;
+    constructor(name, surname){
+        this.name = name
+        this.surname = surname
     }
 
-    getАutograph(){
-        return `${this.name} ${this.surname}, с наилучшими пожеланиями`
+    getAutograph(){
+        console.log(`${this.name} ${this.surname}, с наилучшими пожеланиями`);
     }
 }
 
-let singer = new Singer('John', 'Smith');
-console.log(singer.getАutograph());
+let singer = new Singer("Сергей","Ефимов");
+singer.getAutograph();
+
+
+
+

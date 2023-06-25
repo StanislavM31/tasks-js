@@ -5,12 +5,14 @@ const array = [
     { "id": 4, "name": "German", "age": 18 },
     { "id": 5, "name": "Maria", "age": 27 }
 ]
+let numbers = [1,2,3,4,5,6,7,8,9,0];
+
 function getAll(){
     return array;
 }
 function getById(id){
     let filtered = array.filter(el=>el.id==id);
-    if(filtered.length>0){
+    if(filtered.length<1){
         return 'по такому id нет элемента'
     } else{
         return filtered;
@@ -21,4 +23,8 @@ function create(name, age){
     return array;
 }
 
-module.exports = { getAll, getById, create};
+function getNumbers(){
+    return numbers;
+}
+
+module.exports = { getAll, getById, create, getNumbers};

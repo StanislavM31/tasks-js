@@ -1,23 +1,27 @@
-/*
-5. На входе n – количество элементов массива. Далее производится заполнение
-массива с клавиатуры. Реализуйте 2 функции. Первая для формирования массива.
-Вторая для нахождения количества элементов массива
-*/
-let arr = [];
-let size = prompt("Ведите размер массива");
+function* generateSequence() {
+  yield 1;
+  yield 2;
+  yield 3;
+}
 
-let doArr = (d, s) => {
+let sequence = generateSequence(); // возвращает объект-итератор
 
-  for (let i = 0; i < size; i++) {
-    const element = prompt('Введите элемент массива');
-    d.push(element);
+console.log(sequence.next().value); // 1
+console.log(sequence.next().value); // 2
+console.log(sequence.next().value); // 3
+
+let arr = '1,2,3,4,5';
+let temp = arr.split(",");
+console.log(temp);
+console.log(temp.join('-'));
+
+function test(x){
+  let count = 0;
+  while (count<=x) {
+    console.log(`count: ${count}`);
+    count++;
+    test();
   }
-  console.log(d);
-  return d;
 }
 
-let getLength = (a) =>{
-  return a.length;
-}
-
-console.log( getLength(doArr(arr, size)));
+test(8);
