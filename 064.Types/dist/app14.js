@@ -2,34 +2,23 @@
 14. Напишите программу, которая находит и выводит наиболее часто встречающийся
 символ в заданной строке.
 */
-let string14 = 'aabbccssssssssssssssabc';
-;
-let array14 = string14.split('');
-let a14;
-let final = [];
-for (let i = 0; i < array14.length; i++) {
-    const element = array14[i];
-    let count = 0;
-    let temp = array14.filter(el => {
-        if (el == element) {
-            count++;
-        }
-        return el;
-    });
-    let result14 = {
-        symbol: element,
-        amount: count
-    };
-    final.push(result14);
+let str14 = 'aabbccssssssssssssssabc'.split('');
+let obj = {};
+for (let i = 0; i < str14.length; i++) {
+    const element = str14[i];
+    if (obj.hasOwnProperty(element)) {
+        obj[element] += 1;
+    }
+    else {
+        obj[element] = 1;
+    }
 }
-/* a14 = array14.map(el=>{
-    let count:number = 0
-    let elementOfarray14:string = el;
-    array14.forEach(element => {
-        if(element==elementOfarray14){
-            count++
-        }
-    });
-    return ({el:count});
-}) */
-console.log(final);
+const values = Object.values(obj);
+const max = Math.max(...values);
+for (let key in obj) {
+    if (obj[key] === max) {
+        console.log(key, obj[key]);
+        break;
+    }
+}
+console.log();

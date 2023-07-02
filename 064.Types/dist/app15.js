@@ -3,18 +3,10 @@
 элементов, каждое значение которого имеет вид !name
 [“hschool”, “company”] -> [“!hschool”, “!company”]
 */
-let arr15 = [];
-let element15;
-let arr15_ = [];
-while (element15 !== '') {
-    element15 = prompt();
-    if (!element15) {
-        break;
-    }
-    /* arr15.push(`!${element15}`) */
-    arr15.push(element15);
-}
-arr15.forEach(el => {
-    arr15_.push(`!${el}`);
+let array15 = ['hschool', 'company'];
+let result15 = array15.map((el) => `!${el}`);
+let result15_ = [];
+array15.forEach((el) => {
+    result15_.push(`!${el}`);
 });
-console.log(arr15_);
+console.log(result15_);

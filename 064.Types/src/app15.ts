@@ -4,21 +4,15 @@
 [“hschool”, “company”] -> [“!hschool”, “!company”]
 */
 
-let arr15:string[] = [];
-let element15:string;
+let array15:string[] = ['hschool', 'company'];
 
-let arr15_:string[] = [];
 
-while(element15 !==''){
-    element15 = prompt();
-    if(!element15){
-        break;
-    }
-    /* arr15.push(`!${element15}`) */
-    arr15.push(element15);
-}
+let result15:string[] = array15.map((el:string)=> `!${el}`)
 
-arr15.forEach(el=>{
-    arr15_.push(`!${el}`)
+let result15_:string[] = [];
+
+array15.forEach((el:string)=>{
+    result15_.push(`!${el}`)
 })
-console.log(arr15_);
+
+console.log(result15_);

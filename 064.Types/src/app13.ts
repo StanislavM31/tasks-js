@@ -15,3 +15,4 @@ array13 = array13.map((el:number)=>{
 })
 
 console.log(array13);
+
