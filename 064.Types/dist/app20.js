@@ -12,6 +12,6 @@ for (let i = 0; i < arrayOfBooks20.length; i++) {
     if (result20MaxPages[0].countOfPages < arrayOfBooks20[i].countOfPages) {
         result20MaxPages[0] = arrayOfBooks20[i];
     }
-    console.log(`итерация ${i} обьект с maxPages: ${result20MaxPages[0]}`);
+    console.log(`итерация ${i} обьект с maxPages: ${JSON.stringify(result20MaxPages[0])}`);
 }
 console.log(...result20MaxPages);
