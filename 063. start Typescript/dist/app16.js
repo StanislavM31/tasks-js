@@ -6,6 +6,8 @@
     **
     *
 */
+
+
 let number16 = +prompt();
 for (let i = 0; i < number16; i++) {
     let string = "";

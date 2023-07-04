@@ -4,6 +4,8 @@
 символы остаются без изменений.
 "Hello World" -> "o d“
 */
+
+
 let str15 = "Lorem ipsum is placeholder text";
 let temp15_0 = str15.split(' ');
 let temp15_1 = temp15_0.map((el) => {
