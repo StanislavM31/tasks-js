@@ -4,9 +4,12 @@
 getMax, getMin для вычисления среднего значения, максимального и
 минимального элементов массива.
 */
-class ArrayAnalyzer {
+class ArrayAnalyzer_abstract {
+}
+class ArrayAnalyzer extends ArrayAnalyzer_abstract {
     array;
     constructor(array) {
+        super();
         this.array = array;
     }
     getAverage() {
@@ -18,7 +21,7 @@ class ArrayAnalyzer {
     }
     ;
     getMin() {
-        return Math.max(...this.array);
+        return Math.min(...this.array);
     }
     ;
 }
