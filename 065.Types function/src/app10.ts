@@ -4,10 +4,12 @@
 */
 
 
-function car(a:number){ //?number
+function car(a:number, b?:number){ //?number
+    if( a && b)
     return (b:number)=>{
         return (a+b);
     }
 }
+
 
 console.log(car(2)(3));
