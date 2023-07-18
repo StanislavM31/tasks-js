@@ -1,4 +1,4 @@
-const { sum, multi, sumOfArray, findProduct, uniqNumbers} = require("./app.js");
+const { sum, multi, sumOfArray, findProduct, uniqNumbers, amountField, doubledValues, isEvenArray, devideArray} = require("./app.js");
 
 describe("набор тестов 1", () => {
   test("Succes", () => {
@@ -85,6 +85,7 @@ const arrayOfPhoneNumbers = [
   "+375441234567",
   "+375297756871",
 ];
+
 describe('набор тестов 5', ()=>{
   test("Success", ()=>{
     const result = uniqNumbers('stringNotArray');
@@ -117,3 +118,82 @@ describe('набор тестов 5', ()=>{
     ]);
   })
 })
+
+describe('Набор тестов 6', ()=>{
+  test("Success", ()=>{
+    const result = amountField([1,2,3]);
+    expect(result).toBe(`parameter is not an object`);
+  })
+  test("Success", ()=>{
+    const result = amountField({});
+    expect(result).toBe(`в обьекте нет полей`);
+  })
+  test("Success", ()=>{
+    const result = amountField({ "a":1, "b":2});
+    expect(result).toHaveLength(2);
+  })
+
+})
+
+describe('Набор тестов 7', ()=>{
+  test("Success", ()=>{
+    const result = doubledValues("string");
+    expect(result).toBe(`is not array`);
+  })
+  test("Success", ()=>{
+    const result = doubledValues([]);
+    expect(result).toBe(`empty array`);
+  })
+  test("Success", ()=>{
+    const result = doubledValues([5,10,15]);
+    expect(result).toEqual([10,20,30]);
+  })
+})
+
+describe('Набор тестов 8', ()=>{
+  test("Success", ()=>{
+    const result = isEvenArray("string123");
+    expect(result).toBe(`is not array`);
+  })
+  test("Success", ()=>{
+    const result = isEvenArray([]);
+    expect(result).toBe(`empty array`);
+  })
+  test("Success", ()=>{
+    const result = isEvenArray([10,20,"string"]);
+    expect(result).toBe(`array have a string!`);
+  })
+  test("Success",()=>{
+    const result = isEvenArray([10,1,20,1,30,1,1]);
+    expect(result).toEqual([10,20,30]);
+})
+})
+
+describe('Набор тестов 9', ()=>{
+
+  test("Success",()=>{
+    const result = devideArray([1, 2, 3, 4, 5, 6], 1);
+    expect(result).toEqual([[1], [2], [3], [4], [5], [6]]);
+})
+  test("Success",()=>{
+    const result = devideArray([1, 2, 3, 4, 5, 6], 2);
+    expect(result).toEqual([[1, 2], [3, 4], [5, 6]]);
+})
+  test("Success",()=>{
+    const result = devideArray([1, 2, 3, 4, 5, 6], 3);
+    expect(result).toEqual([[1, 2, 3], [4, 5, 6]]);
+})
+  test("Success",()=>{
+    const result = devideArray([1, 2, 3, 4, 5, 6], 4);
+    expect(result).toEqual([[1, 2, 3, 4], [5, 6]]);
+})
+  test("Success",()=>{
+    const result = devideArray([1, 2, 3, 4, 5, 6], 5);
+    expect(result).toEqual([[1, 2, 3, 4, 5], [6]]);
+})
+  test("Success",()=>{
+    const result = devideArray([1, 2, 3, 4, 5, 6], 6);
+    expect(result).toEqual([[1, 2, 3, 4, 5, 6]]);
+})
+})
+

@@ -79,15 +79,16 @@ function findProduct(array) {
 проверки.
 Написать тест для функции */
 
-
 function uniqNumbers(array) {
   try {
-    if(!Array.isArray(array)) throw new Error(`not an array`);
-    if(!array.length) throw new Error(`Empty array`);
-    const boolString = array.every(el=> typeof el == "string");
-    if(boolString==false) throw new Error(`не все элементы - строки`)
-    const boolRegex = array.every(el=> /^\+375+[29,33,44]+[0-9]{7}/gm.test(el));
-    if(boolRegex==false) throw new Error(`не все элементы - phone numbers`)
+    if (!Array.isArray(array)) throw new Error(`not an array`);
+    if (!array.length) throw new Error(`Empty array`);
+    const boolString = array.every((el) => typeof el == "string");
+    if (boolString == false) throw new Error(`не все элементы - строки`);
+    const boolRegex = array.every((el) =>
+      /^\+375+[29,33,44]+[0-9]{7}/gm.test(el)
+    );
+    if (boolRegex == false) throw new Error(`не все элементы - phone numbers`);
     const uniq = [];
     for (const element of array) {
       if (!uniq.includes(element)) {
@@ -99,4 +100,94 @@ function uniqNumbers(array) {
     return error.message;
   }
 }
-module.exports = { sum, multi, sumOfArray, findProduct, uniqNumbers };
+/* 6. На входе статичный объект. Необходимо посчитать количество пар (ключ:
+значение) где значение число и вывести количество. Добавить необходимые
+проверки.
+Написать тест для функции
+ */
+
+function amountField(obj) {
+  try {
+    if (toString.call(obj) !== "[object Object]")
+      throw new Error("parameter is not an object");
+    const amount = Object.keys(obj);
+    if (!amount.length) throw new Error(`в обьекте нет полей`);
+    return amount;
+  } catch (error) {
+    return error.message;
+  }
+}
+/*
+7. На входе статичный объект. Необходимо числовые значения удвоить на выходе.
+Написать тест для функции
+ */
+function doubledValues(array) {
+  try {
+    if (!Array.isArray(array)) throw new Error(`is not array`);
+    if (!array.length) throw new Error(`empty array`);
+    return array.map((el) => el * 2);
+  } catch (error) {
+    return error.message;
+  }
+}
+
+/*
+8. На входе статичный объект. Необходимо сформировать массив из всх четных
+значений объекта.
+Написать тест для функции
+*/
+function isEvenArray(array) {
+  try {
+    if (!Array.isArray(array)) throw new Error(`is not array`);
+    if (!array.length) throw new Error(`empty array`);
+
+    if (!array.every((el) => typeof el == "number"))
+      throw new Error(`array have a string!`);
+    return array.filter((el) => el % 2 == 0);
+  } catch (error) {
+    return error.message;
+  }
+}
+
+/*
+9. На входе статичный массив [1, 2, 3, 4, 5, 6] и динамическое значение n. Необходимо
+разбить данный одномерный массив на маленькие массивы в зависимости от
+того, какого число ввел пользователь. Добавить необходимые проверки.
+1 -> [[1], [2], [3], [4], [5], [6]]
+2 -> [[1, 2], [3, 4], [5, 6]]
+3 -> [[1, 2, 3], [4, 5, 6]]
+4 -> [[1, 2, 3, 4], [5, 6]
+5 -> [[1, 2, 3, 4, 5], [6]]
+6 -> [[1, 2, 3, 4, 5, 6]]
+Написать тест для функции
+*/
+
+function devideArray(array, n) {
+
+  if (!array.every((el) => typeof el == "number"))
+    throw new Error(`array have a string!`);
+  const result = [];
+  let tempArr = [];
+  for (let i = 0; i < array.length; i++) {
+    const element = array[i];
+    tempArr.push(element);
+    if (tempArr.length == n || i == array.length - 1) {
+      result.push(tempArr);
+      console.log(tempArr);
+      tempArr = [];
+    }
+  }
+  console.log(result);
+  return result;
+}
+module.exports = {
+  sum,
+  multi,
+  sumOfArray,
+  findProduct,
+  uniqNumbers,
+  amountField,
+  doubledValues,
+  isEvenArray,
+  devideArray,
+};
