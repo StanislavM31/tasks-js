@@ -163,22 +163,27 @@ function isEvenArray(array) {
 */
 
 function devideArray(array, n) {
+  try {
+    if (!Array.isArray(array)) throw new Error(`is not array`);
+    if (!array.length) throw new Error(`empty array`);
+    if (!array.every((el) => typeof el == "number")) throw new Error(`array have a string!`);
 
-  if (!array.every((el) => typeof el == "number"))
-    throw new Error(`array have a string!`);
-  const result = [];
-  let tempArr = [];
-  for (let i = 0; i < array.length; i++) {
-    const element = array[i];
-    tempArr.push(element);
-    if (tempArr.length == n || i == array.length - 1) {
-      result.push(tempArr);
-      console.log(tempArr);
-      tempArr = [];
+    const result = [];
+    let tempArr = [];
+    for (let i = 0; i < array.length; i++) {
+      const element = array[i];
+      tempArr.push(element);
+      if (tempArr.length == n || i == array.length - 1) {
+        result.push(tempArr);
+        console.log(tempArr);
+        tempArr = [];
+      }
     }
+    console.log(result);
+    return result;
+  } catch (error) {
+    return error.message;
   }
-  console.log(result);
-  return result;
 }
 module.exports = {
   sum,

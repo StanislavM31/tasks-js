@@ -170,7 +170,14 @@ describe('Набор тестов 8', ()=>{
 })
 
 describe('Набор тестов 9', ()=>{
-
+  test("Success", ()=>{
+    const result = devideArray("string123", 1);
+    expect(result).toBe(`is not array`);
+  })
+  test("Success", ()=>{
+    const result = devideArray([], 1);
+    expect(result).toBe(`empty array`);
+  })
   test("Success",()=>{
     const result = devideArray([1, 2, 3, 4, 5, 6], 1);
     expect(result).toEqual([[1], [2], [3], [4], [5], [6]]);
