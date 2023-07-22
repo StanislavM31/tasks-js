@@ -3,7 +3,7 @@ import {
     capitalizeString, flattenArray,
     deleteDublicate, findMissingNumber,
     findPairWithSum, StringArray,
-    NumberArray, PersonArray
+    NumberArray, PersonArray, StringManipulator
 } from './app';
 
 describe('TestSuite_1', () => {
@@ -137,9 +137,18 @@ describe('TestSuite_10', () => {
     })
 })
 describe('TestSuite_11', () => {
+    let stringManipulator = new StringManipulator();
     test('Success', () => {
-        const result = deleteDublicate('AAAABBBCCDAABBB');
-        expect(result).toBe('ABCDAB');
+        const result = stringManipulator.getCharacterCount();
+        expect(result).toBe(13);
+    })
+    test('Success', () => {
+        const result = stringManipulator.getReversedText();
+        expect(result).toBe('incididunt tempor eiusmod do sed elit, adipiscing consectetur amet, sit dolor ipsum Lorem');
+    })
+    test('Success', () => {
+        const result = stringManipulator.getWords()
+        expect(result).toEqual(['Lorem', 'ipsum', 'dolor', 'sit', 'amet,', 'consectetur', 'adipiscing', 'elit,', 'sed', 'do', 'eiusmod', 'tempor', 'incididunt']);
     })
 })
 describe('TestSuite_12', () => {

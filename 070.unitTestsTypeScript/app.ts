@@ -166,28 +166,47 @@ class PersonArray {
         { name: 'Gregory', age: 50 },
         { name: 'Sam', age: 30 },
     ]
-    getNames(): string[]{
-        const names:string[]=[];
+    getNames(): string[] {
+        const names: string[] = [];
         this.array.forEach(element => {
             names.push(element.name);
         });
         return names;
     }
-    getAdults(): Person[]{
-        const adults:Person[]=[];
+    getAdults(): Person[] {
+        const adults: Person[] = [];
         this.array.forEach(element => {
-            if(element.age>18){
+            if (element.age > 18) {
                 adults.push(element);
             }
         });
         return adults;
     }
-    getAverageAge(): number{
-        let allAge:number = 0;
-        this.array.map((el:Person)=>{
-            allAge+=el.age
+    getAverageAge(): number {
+        let allAge: number = 0;
+        this.array.map((el: Person) => {
+            allAge += el.age
         })
-        return allAge/this.array.length;
+        return allAge / this.array.length;
+    }
+}
+/*
+11. Создайте класс StringManipulator, который имеет свойство text (строка) и методы:
+getCharacterCount(): number - возвращает количество символов в тексте.
+getWords(): string[] - возвращает массив слов из текста.
+getReversedText(): string - возвращает текст в обратном порядке.
+*/
+
+class StringManipulator {
+    text: string = 'Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt';
+    getCharacterCount(): number{
+        return this.text.split(' ').length
+    }
+    getWords(): string[]{
+        return this.text.split(' ')
+    }
+    getReversedText(): string{
+        return this.text.split(' ').reverse().join(' ');
     }
 }
 /*
@@ -200,10 +219,10 @@ class PersonArray {
 '12233’ -> [1, 2, 3]
 Написать тест для функции
 */
-function deleteDublicate(string:string) {
+function deleteDublicate(string: string) {
     let result = '';
-    for (let i:number = 0; i < string.length; i++) {
-        let element:string = string[i];
+    for (let i: number = 0; i < string.length; i++) {
+        let element: string = string[i];
         if (element == string[i + 1] || element == string[i - 1]) {
             if (result[result.length - 1] == element) {
                 continue;
@@ -218,8 +237,8 @@ function deleteDublicate(string:string) {
     return result;
 }
 export {
-    isPalindrome, calculateFactorial,capitalizeString,
+    isPalindrome, calculateFactorial, capitalizeString,
     flattenArray, deleteDublicate, findMissingNumber,
     findPairWithSum,
-    StringArray, NumberArray, PersonArray
+    StringArray, NumberArray, PersonArray, StringManipulator
 }
