@@ -9,7 +9,6 @@ export default function Task5() {
 
   function setValueFromInp1(e){
     SetValue1(e.target.value);
-    SetValue2(e.target.value);
   }
   function setValueFromInp2(e){
     SetValue2(e.target.value);
