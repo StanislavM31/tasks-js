@@ -9,6 +9,17 @@ import Task6 from "./pages/task_2/Task2";
 import Task7 from "./pages/task_2/Task3";
 import Task8 from "./pages/task_2/Task4";
 import Task9 from "./pages/task_2/Task7";
+import Task10 from "./pages/task_3/Task10";
+import Task11 from "./pages/task_3/Task11";
+import Task13 from "./pages/task_3/Task13";
+import Task14 from "./pages/task_3/Task14";
+import Task15 from "./pages/task_3/Task15";
+import HookUseState from "./pages/HookUseState";
+import Counter from "./pages/Counter";
+import Task16 from "./pages/task_3/Task16";
+import Task18 from "./pages/task_5/Task4";
+import Task20 from "./pages/task_5/Task6";
+import Task21 from "./pages/task_6/task_1";
 
 function App() {
   return (
@@ -34,7 +45,27 @@ function App() {
         <hr />
         <Task9 />
         <hr />
+        <Task10 />
+        <hr />
+        <Task11 />
+        <hr />
+        <Task13 />
+        <hr />
+        <Task14 />
+        <hr />
+        <Task15 />
+        <hr />
       </div>
+      <HookUseState/>
+      <div>
+        <Counter/>
+      </div>
+        <hr />
+        <Task16 />
+        <Task18 />
+        <Task20 />
+        <hr />
+        <Task21 />
     </>
   );
 }
