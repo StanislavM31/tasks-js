@@ -20,6 +20,10 @@ import Task16 from "./pages/task_3/Task16";
 import Task18 from "./pages/task_5/Task4";
 import Task20 from "./pages/task_5/Task6";
 import Task21 from "./pages/task_6/task_1";
+import Task23 from "./pages/task_7/Task_2";
+import Task24 from "./pages/task_7/Task_3";
+import Task25 from "./pages/task_7/Task_4";
+import Task26 from "./pages/task_7/Task_5";
 
 function App() {
   return (
@@ -66,6 +70,14 @@ function App() {
         <Task20 />
         <hr />
         <Task21 />
+        <hr />
+        <Task23 />
+        <hr />
+        <Task24 />
+        <hr />
+        <Task25 />
+        <hr />
+        <Task26 />
     </>
   );
 }
