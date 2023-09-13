@@ -15,8 +15,8 @@ export default function Task_4() {
   useEffect(() => {
     setData(requestDate());
   },[]);
-  const requestDate = () => {
-    const time = new Date()
+  const requestDate = (time = new Date()) => {
+
     return time.toLocaleString();
   };
   return (
