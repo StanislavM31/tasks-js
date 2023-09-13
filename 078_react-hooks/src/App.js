@@ -24,7 +24,7 @@ import Task23 from "./pages/task_7/Task_2";
 import Task24 from "./pages/task_7/Task_3";
 import Task25 from "./pages/task_7/Task_4";
 import Task26 from "./pages/task_7/Task_5";
-
+import Task30 from "./pages/useEffect/task_1"
 function App() {
   return (
     <>
@@ -78,6 +78,8 @@ function App() {
         <Task25 />
         <hr />
         <Task26 />
+        <p>useEffect</p>
+        <Task30/>
     </>
   );
 }
