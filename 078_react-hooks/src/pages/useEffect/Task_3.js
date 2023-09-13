@@ -11,7 +11,6 @@ export default function Task_3(){
     const[info, setInfo] = useState();
     useEffect(()=> (async function sendRequest(){
         const response = await axios.get("https://api.ipify.org/?format=json");
-        console.log(response.data);
         setInfo(response.data.ip);
     }),[info])
 
