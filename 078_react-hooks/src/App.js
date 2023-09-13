@@ -26,6 +26,7 @@ import Task25 from "./pages/task_7/Task_4";
 import Task26 from "./pages/task_7/Task_5";
 import Task31 from "./pages/useEffect/Task_1";
 import Task32 from "./pages/useEffect/Task_2";
+import Task33 from "./pages/useEffect/Task_3";
 function App() {
   return (
     <>
@@ -83,6 +84,8 @@ function App() {
         <Task31/>
         <hr />
         <Task32/>
+        <hr />
+        <Task33/>
     </>
   );
 }
