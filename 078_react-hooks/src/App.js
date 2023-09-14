@@ -29,48 +29,60 @@ import Task32 from "./pages/useEffect/Task_2";
 import Task33 from "./pages/useEffect/Task_3";
 import Task34 from "./pages/useEffect/Task_4";
 import Task35 from "./pages/useEffect/Task_5";
+import Task40 from "./pages/useMemo/Task_1";
+import MyContext from "../src/context";
+import ContextAuth from "./pages/useContext/Task_1";
+
+import { useState } from "react";
 
 function App() {
+
+  const [value, setValue] = useState("ru");
+  function sayHello(event) {
+    setValue(event.target.textContent);
+  }
+
   return (
     <>
-      <div className={style.task1}>
-        <Task1 />
+      <MyContext.Provider value={{ name: "name", surname: "surname", value:value, sayHello: sayHello }}>
+        <div className={style.task1}>
+          <Task1 />
+          <hr />
+          <Task2 />
+          <hr />
+          <Task3 />
+          <hr />
+          <Task4 />
+          <hr />
+        </div>
+        <div className={style.task2}>
+          <Task5 />
+          <hr />
+          <Task6 />
+          <hr />
+          <Task7 />
+          <hr />
+          <Task8 />
+          <hr />
+          <Task9 />
+          <hr />
+          <Task10 />
+          <hr />
+          <Task11 />
+          <hr />
+          <Task13 />
+          <hr />
+          <Task14 />
+          <hr />
+          <Task15 />
+          <hr />
+        </div>
+        <HookUseState />
+        <div>
+          <Counter />
+        </div>
         <hr />
-        <Task2 />
-        <hr />
-        <Task3 />
-        <hr />
-        <Task4 />
-        <hr />
-      </div>
-      <div className={style.task2}>
-        <Task5 />
-        <hr />
-        <Task6 />
-        <hr />
-        <Task7 />
-        <hr />
-        <Task8 />
-        <hr />
-        <Task9 />
-        <hr />
-        <Task10 />
-        <hr />
-        <Task11 />
-        <hr />
-        <Task13 />
-        <hr />
-        <Task14 />
-        <hr />
-        <Task15 />
-        <hr />
-      </div>
-      <HookUseState/>
-      <div>
-        <Counter/>
-      </div>
-        <hr />
-        <Task16 />
+        {/*         <Task16 />
         <Task18 />
         <Task20 />
         <hr />
@@ -82,9 +94,9 @@ function App() {
         <hr />
         <Task25 />
         <hr />
-        <Task26 />
+        <Task26 /> */}
         <p>useEffect</p>
-        <Task31/>
+        {/*        <Task31/>
         <hr />
         <Task32/>
         <hr />
@@ -93,6 +105,13 @@ function App() {
         <Task34/>
         <hr />
         <Task35/>
+        <hr /> */}
+        <p>context</p>
+        {/*         <Task40/>
+        <hr />
+        <ContextAuth/> */}
+
+      </MyContext.Provider>
     </>
   );
 }
