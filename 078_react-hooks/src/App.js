@@ -32,7 +32,7 @@ import Task35 from "./pages/useEffect/Task_5";
 import Task40 from "./pages/useMemo/Task_1";
 import MyContext from "../src/context";
 import ContextAuth from "./pages/useContext/Task_1";
-
+import Task52 from "./pages/useContext/Task_2";
 import { useState } from "react";
 
 function App() {
@@ -110,7 +110,8 @@ function App() {
         {/*         <Task40/>
         <hr />
         <ContextAuth/> */}
-
+        <hr />
+        <Task52 />
       </MyContext.Provider>
     </>
   );
