@@ -33,10 +33,10 @@ import Task40 from "./pages/useMemo/Task_1";
 import MyContext from "../src/context";
 import ContextAuth from "./pages/useContext/Task_1";
 import Task52 from "./pages/useContext/Task_2";
+import ExampleUseRef from "./pages/useRef/ExampleUseRef";
 import { useState } from "react";
 
 function App() {
-
   const [value, setValue] = useState("ru");
   function sayHello(event) {
     setValue(event.target.textContent);
@@ -44,7 +44,14 @@ function App() {
 
   return (
     <>
-      <MyContext.Provider value={{ name: "name", surname: "surname", value:value, sayHello: sayHello }}>
+      <MyContext.Provider
+        value={{
+          name: "name",
+          surname: "surname",
+          value: value,
+          sayHello: sayHello,
+        }}
+      >
         <div className={style.task1}>
           <Task1 />
           <hr />
@@ -82,7 +89,7 @@ function App() {
           <Counter />
         </div>
         <hr />
-        {/*         <Task16 />
+        <Task16 />
         <Task18 />
         <Task20 />
         <hr />
@@ -94,24 +101,26 @@ function App() {
         <hr />
         <Task25 />
         <hr />
-        <Task26 /> */}
+        <Task26 />
         <p>useEffect</p>
-        {/*        <Task31/>
+        <Task31 />
         <hr />
-        <Task32/>
+        <Task32 />
         <hr />
-        <Task33/>
+        <Task33 />
         <hr />
-        <Task34/>
+        <Task34 />
         <hr />
-        <Task35/>
-        <hr /> */}
+        <Task35 />
+        <hr />
         <p>context</p>
-        {/*         <Task40/>
+        <Task40 />
         <hr />
-        <ContextAuth/> */}
+        <ContextAuth />
         <hr />
         <Task52 />
+        <hr />
+        <ExampleUseRef />
       </MyContext.Provider>
     </>
   );

@@ -19,7 +19,7 @@ const translate = {
 
   return (
     <>
-      <button onClick={data.sayHello}>{data.sayHello}</button>
+      <button onClick={data.sayHello}></button>
       <button onClick={data.sayHello}></button>
       <p>{translate[data.value]}</p>
     </>
