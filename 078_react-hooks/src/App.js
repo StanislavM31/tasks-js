@@ -36,6 +36,7 @@ import Task52 from "./pages/useContext/Task_2";
 import ExampleUseRef from "./pages/useRef/ExampleUseRef";
 import Callback1 from "./pages/useCallback/Task_1";
 import Callback2 from "./pages/useCallback/Task2";
+import Callback3 from "./pages/useCallback/Task3";
 import { useState } from "react";
 
 function App() {
@@ -122,9 +123,12 @@ function App() {
         <hr />
         <Task52 />
         <hr />
+        <p>useCallback</p>
         <Callback1/>
         <hr />
         <Callback2/>
+        <hr />
+        <Callback3/>
       </MyContext.Provider>
     </>
   );
