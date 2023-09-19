@@ -3,12 +3,16 @@
 на кнопку статус компонента должен меняться между "Активный" и "Неактивный".
 Используйте useCallback, чтобы оптимизировать функцию изменения статуса.
 */
-import { useState, useEffect } from "react";
+import { useState, useEffect, useCallback } from "react";
 
 export default function Task3() {
-  const [state, setState] = useState();
-useEffect(()=> setState(true),[])
-  function changeStatus(e) {
+  const [state, setState] = useState(true);
+
+/* useEffect(()=> setState(true),[]) */
+
+ const status = useCallback(changeStatus,[state]);
+
+  function changeStatus() {
     if (state === false) {
       setState(true);
 
@@ -20,8 +24,8 @@ useEffect(()=> setState(true),[])
 
   return (
     <>
-    {state===true}?<div>Status:Active</div>:<div>Status:NONActive</div>
-      <button onClick={changeStatus}>ChangeStatus</button>
+    {state===true?<div>Status:Active</div>:<div>Status:NONActive</div>}
+      <button onClick={status}>ChangeStatus</button>
     </>
   );
 }

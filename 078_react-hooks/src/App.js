@@ -37,6 +37,8 @@ import ExampleUseRef from "./pages/useRef/ExampleUseRef";
 import Callback1 from "./pages/useCallback/Task_1";
 import Callback2 from "./pages/useCallback/Task2";
 import Callback3 from "./pages/useCallback/Task3";
+import UseReducer1 from "./pages/useReducer/Task1";
+
 import { useState } from "react";
 
 function App() {
@@ -129,6 +131,9 @@ function App() {
         <Callback2/>
         <hr />
         <Callback3/>
+        <hr />
+        <UseReducer1/>
+    
       </MyContext.Provider>
     </>
   );
