@@ -13,6 +13,8 @@ export default function Task1(){
 
     return (
         <>
+        <p>1. Создайте компонент, который при каждом клике на кнопку увеличивает размер
+шрифта текста в элементе на странице.</p>
         <div style={{fontSize: "10px"}} ref = {data}>Good morning</div>
         <button onClick={makeBigger}>Click++</button>
         <button onClick={makeSmaller}>Click--</button>

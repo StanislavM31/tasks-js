@@ -13,6 +13,8 @@ export default function Task2(){
 
     return (
         <>
+        <p>2. Создайте компонент, который при фокусе на текстовом поле добавляет
+background (onFocus, onBlur)</p>
         <input type="text" ref={input} onFocus={focus} placeholder="focusMe"/>
         </>
     )

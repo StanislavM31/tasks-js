@@ -23,15 +23,20 @@ import Task21 from "./pages/task_6/task_1";
 import Task23 from "./pages/useRef/Task1";
 import Task24 from "./pages/task_7/Task_3";
 
-import Task26 from "./pages/task_7/Task_5";
+
 import UseState1 from "./pages/useState/Task1";
 import Task31 from "./pages/useEffect/Task1";
 import Task32 from "./pages/useEffect/Task2";
-import Task33 from "./pages/useEffect/Task_3";
-import Task34 from "./pages/useEffect/Task_4";
-import Task35 from "./pages/useEffect/Task_5";
-import UseRef1 from "./pages/useEffect/Task1"
-import UseRef2 from "./pages/useEffect/Task2"
+import Task33 from "./pages/useEffect/Task3";
+import Task34 from "./pages/useEffect/Task4";
+import Task35 from "./pages/useEffect/Task5";
+
+
+import UseRef1 from "./pages/useRef/Task1"
+import UseRef2 from "./pages/useRef/Task2"
+import UseRef3 from "./pages/useRef/Task3"
+import UseRef4 from "./pages/useRef/Task4"
+
 import Task40 from "./pages/useMemo/Task_1";
 import MyContext from "../src/context";
 import ContextAuth from "./pages/useContext/Task_1";
@@ -108,8 +113,6 @@ function App() {
         <Task24 />
 
         <hr />
-        <Task26 />
-        <hr />
         <div className={style.useStateHook}>
           <p>useState(название компонента в коде всегда с большой буквы)</p>
           <UseState1 />
@@ -130,9 +133,13 @@ function App() {
         <p>.</p>
         <div className={style.useRefHook}>
         <p>useRef</p>
+        fgsdfgsdfkhsdkflsdfskdfkjsdfkjsdhfkjsdf
+        sdfbsdvfsdvfhsdvfvsdfvsdf
           <ExampleUseRef/>
           <UseRef1/>
           <UseRef2/>
+          <UseRef3/>
+          <UseRef4/>
         </div>
         <p>context</p>
         <Task40 />

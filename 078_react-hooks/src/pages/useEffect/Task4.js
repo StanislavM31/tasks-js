@@ -10,7 +10,7 @@ console.log(now);
 
 import { useEffect, useState } from "react";
 
-export default function Task_4() {
+export default function Task4() {
   const [date, setData] = useState("");
   useEffect(() => {
     setData(requestDate());

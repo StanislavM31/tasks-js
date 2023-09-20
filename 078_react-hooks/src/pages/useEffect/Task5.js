@@ -7,7 +7,7 @@
 import { useState, useEffect } from "react";
 import axios from "axios";
 
-export default function Task_5() {
+export default function Task5() {
   const [obj, setObj] = useState("");
   /*   useEffect(() =>(
 

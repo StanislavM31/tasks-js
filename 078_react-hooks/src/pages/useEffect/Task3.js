@@ -7,7 +7,7 @@
 import {useState, useEffect} from "react"
 import axios from "axios";
 
-export default function Task_3(){
+export default function Task3(){
     const[info, setInfo] = useState();
     useEffect(()=> (async function sendRequest(){
         const response = await axios.get("https://api.ipify.org/?format=json");

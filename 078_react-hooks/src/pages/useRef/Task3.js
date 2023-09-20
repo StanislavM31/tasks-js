@@ -5,7 +5,7 @@
 
 import { useRef } from "react";
 
-export default function Task5(){
+export default function Task3(){
     const tag = useRef();
     const array = ['red', 'blue', "green", "yellow", "purple"];
 
@@ -17,6 +17,8 @@ export default function Task5(){
     }
     return(
         <div>
+            <p>3. Создайте компонент, который по клику на кнопку добавляет рандомный color к
+заголовку</p>
             <p ref={tag}>Paragraph</p>
             <button onClick={changeColor}>anotherColor, please</button>
         </div>
