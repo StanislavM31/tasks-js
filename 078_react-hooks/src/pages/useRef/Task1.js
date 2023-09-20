@@ -1,7 +1,7 @@
 
 import { useRef } from "react";
 
-export default function Task2(){
+export default function Task1(){
     const data = useRef();
 
     function makeBigger(){

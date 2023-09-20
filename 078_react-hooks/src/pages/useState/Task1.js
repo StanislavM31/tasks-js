@@ -5,19 +5,24 @@
 увеличиваться или уменьшаться.
 */
 
-import { useState } from "react";
+import { useRef, useState, useEffect } from "react";
 
 export default function useState1(){
     const [ val, setVal] = useState(0)
-    const changeValue = (e) =>{
+    const myRef = useRef();
+        const changeValue = (e) =>{
         console.log(e.target.innerText);
-        e.target.innerText==="-"?setVal(val-1):setVal(val+1)
-
+        e.target.innerText==="-"?setVal(val-1):setVal(val+1);
     }
+    useEffect(()=>{
+        if(val===1){
+            myRef.current.textContent = "Плюсани еще!++"
+        }
+    },[val])
     return(
         <>
         <h2>{val}</h2>
-        <button onClick={changeValue}>+</button>
+        <button onClick={changeValue} ref={myRef}>+</button>
         <button onClick={changeValue}>-</button>
         </>
     )
