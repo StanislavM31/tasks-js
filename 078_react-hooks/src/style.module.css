@@ -6,3 +6,15 @@
   padding: 60px 50px ;
   border: 1px solid rgb(21, 211, 21);
 }
+.useStateHook {
+  padding: 20px 10px ;
+  border: 1px solid grey;
+}
+.useEffectHook {
+  padding: 20px 10px ;
+  border: 1px solid rgb(77, 74, 74);
+}
+.useRefHook {
+  padding: 20px 10px ;
+  border: 1px solid rgb(77, 74, 74);
+}

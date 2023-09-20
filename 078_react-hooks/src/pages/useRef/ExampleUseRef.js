@@ -1,6 +1,6 @@
 import React, {useRef} from 'react';
 
-function FocusableInput(){
+function ExampleUseRef(){
     const inputRef = useRef(null);
 
     const focusInput = () =>{
@@ -20,4 +20,4 @@ useRef возвращает изменяемый ref-объект,
         </div>
     )
 }
-export default FocusableInput;
+export default ExampleUseRef;

@@ -20,15 +20,17 @@ import Task16 from "./pages/task_3/Task16";
 import Task18 from "./pages/task_5/Task4";
 import Task20 from "./pages/task_5/Task6";
 import Task21 from "./pages/task_6/task_1";
-import Task23 from "./pages/task_7/Task_2";
+import Task23 from "./pages/useRef/Task_1";
 import Task24 from "./pages/task_7/Task_3";
 import Task25 from "./pages/task_7/Task_4";
 import Task26 from "./pages/task_7/Task_5";
+import UseState1 from "./pages/useState/Task1";
 import Task31 from "./pages/useEffect/Task_1";
 import Task32 from "./pages/useEffect/Task_2";
 import Task33 from "./pages/useEffect/Task_3";
 import Task34 from "./pages/useEffect/Task_4";
 import Task35 from "./pages/useEffect/Task_5";
+import UseRef1 from "./pages/useEffect/Task_1"
 import Task40 from "./pages/useMemo/Task_1";
 import MyContext from "../src/context";
 import ContextAuth from "./pages/useContext/Task_1";
@@ -107,17 +109,31 @@ function App() {
         <Task25 />
         <hr />
         <Task26 />
+        <hr />
+        <div className={style.useStateHook}>
+          <p>useState(название компонента в коде всегда с большой буквы)</p>
+          <UseState1 />
+        </div>
+        <div className={style.useEffectHook}>
         <p>useEffect</p>
-        <Task31 />
-        <hr />
-        <Task32 />
-        <hr />
-        <Task33 />
-        <hr />
-        <Task34 />
-        <hr />
-        <Task35 />
-        <hr />
+          <Task31 />
+          <hr />
+          <Task32 />
+          <hr />
+          <Task33 />
+          <hr />
+          <Task34 />
+          <hr />
+          <Task35 />
+          <hr />
+        </div>
+        <p>.</p>
+        <div className={style.useRefHook}>
+        <p>useRef</p>
+          <ExampleUseRef/>
+          
+          <UseRef1/>
+        </div>
         <p>context</p>
         <Task40 />
         <hr />
@@ -126,14 +142,13 @@ function App() {
         <Task52 />
         <hr />
         <p>useCallback</p>
-        <Callback1/>
+        <Callback1 />
         <hr />
-        <Callback2/>
+        <Callback2 />
         <hr />
-        <Callback3/>
+        <Callback3 />
         <hr />
-        <UseReducer1/>
-    
+        <UseReducer1 />
       </MyContext.Provider>
     </>
   );
