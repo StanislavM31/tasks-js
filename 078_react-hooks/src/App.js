@@ -36,6 +36,7 @@ import UseRef1 from "./pages/useRef/Task1"
 import UseRef2 from "./pages/useRef/Task2"
 import UseRef3 from "./pages/useRef/Task3"
 import UseRef4 from "./pages/useRef/Task4"
+import UseRef5 from "./pages/useRef/Task5"
 
 import Task40 from "./pages/useMemo/Task_1";
 import MyContext from "../src/context";
@@ -140,6 +141,7 @@ function App() {
           <UseRef2/>
           <UseRef3/>
           <UseRef4/>
+          <UseRef5/>
         </div>
         <p>context</p>
         <Task40 />
