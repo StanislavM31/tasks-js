@@ -44,6 +44,7 @@ import UseMemo2 from "./pages/useMemo/Task_2";
 import MyContext from "../src/context";
 import ContextAuth from "./pages/useContext/Task_1";
 import Task52 from "./pages/useContext/Task_2";
+import Task53 from "./pages/useContext/Task_3";
 
 import ExampleUseRef from "./pages/useRef/ExampleUseRef";
 import Callback1 from "./pages/useCallback/Task_1";
@@ -55,11 +56,14 @@ import { useState } from "react";
 
 function App() {
   const [value, setValue] = useState("ru");
+  const [role, makeRole] = useState();
 
   function sayHello(event) {
     setValue(event.target.textContent);
   }
-
+  function setRole(event){
+    makeRole(event.target.textContent);
+  }
   return (
     <>
       <MyContext.Provider
@@ -67,7 +71,9 @@ function App() {
           name: "Albert",
           surname: "Surimov",
           value: value,
-          sayHello: sayHello
+          sayHello: sayHello,
+          role: role,
+          setRole: setRole,
         }}
       >
         <div className={style.task1}>
@@ -153,6 +159,8 @@ function App() {
         <ContextAuth />
         <hr />
         <Task52 />
+        <hr />
+        <Task53 />
         <hr />
         <h2>useCallback</h2>
         <Callback1 />

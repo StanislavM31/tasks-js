@@ -29,6 +29,7 @@ export default function Task_2() {
       <button onClick={data.sayHello}>ru</button>
       <button onClick={data.sayHello}>en</button>
       <button onClick={data.sayHello}>esp</button>
+
       <p>{translate[data.value]}</p>
     </>
   );
