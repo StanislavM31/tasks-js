@@ -4,7 +4,6 @@ function ExampleUseRef(){
     const inputRef = useRef(null);
 
     const focusInput = () =>{
-        console.log(inputRef.current);
         inputRef.current.focus();
     }
     return(

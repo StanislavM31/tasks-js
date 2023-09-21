@@ -7,14 +7,18 @@
   border: 1px solid rgb(21, 211, 21);
 }
 .useStateHook {
-  padding: 20px 10px ;
+  padding: 10px 10px ;
   border: 1px solid grey;
 }
 .useEffectHook {
-  padding: 20px 10px ;
-  border: 1px solid rgb(77, 74, 74);
+  padding: 10px 20px ;
+  border: 1px solid rgb(195, 197, 66);
 }
 .useRefHook {
-  padding: 20px 10px ;
+  padding: 10px 10px ;
   border: 1px solid rgb(77, 74, 74);
+}
+.useMemoHook {
+  padding: 10px 20px ;
+  border: 1px solid rgba(235, 231, 16, 0.973);
 }

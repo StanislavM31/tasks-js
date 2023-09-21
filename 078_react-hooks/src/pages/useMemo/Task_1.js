@@ -1,25 +1,32 @@
 import { useMemo, useState } from "react";
 
 export default function Task_1() {
-  const [value1, setValue1] = useState("");
-  const [value2, setValue2] = useState("");
-  const [sum, setSum] = useState(null);
+  const [number1, setNumber1] = useState(0);
+  const [number2, setNumber2] = useState(0);
+  const [sum, setSum] = useState(0);
 
-  function change1(e) {
-    setValue1(+e.target.value);
+  function ch1(e) {
+    setNumber1(+e.target.value);
   }
-  function change2(e) {
-    setValue2(+e.target.value);
+  function ch2(e) {
+    setNumber2(+e.target.value);
   }
-  useMemo(makeSum, [value1, value2]);
-
   function makeSum() {
-    setSum(value1 + value2);
+    setSum(number1 + number2);
   }
+
+  useMemo(makeSum, [number1,number2]);
+
   return (
     <div>
-      <input type="text" onChange={change1} />
-      <input type="text" onChange={change2} />
+      <p>
+        1. Создайте компонент React, который отображает сумму двух чисел.
+        Используй хук useState для хранения значений чисел и хук useMemo для
+        кэширования результата суммы. При изменении значений чисел, сумма должна
+        пересчитываться только тогда, когда необходимо.
+      </p>
+      <input type="text" onChange={ch1} />
+      <input type="text" onChange={ch2} />
       <div>{sum}</div>
     </div>
   );

@@ -38,7 +38,9 @@ import UseRef3 from "./pages/useRef/Task3"
 import UseRef4 from "./pages/useRef/Task4"
 import UseRef5 from "./pages/useRef/Task5"
 
-import Task40 from "./pages/useMemo/Task_1";
+import UseMemo1 from "./pages/useMemo/Task_1";
+import UseMemo2 from "./pages/useMemo/Task_2";
+
 import MyContext from "../src/context";
 import ContextAuth from "./pages/useContext/Task_1";
 import Task52 from "./pages/useContext/Task_2";
@@ -112,14 +114,13 @@ function App() {
         <Task23 />
         <hr />
         <Task24 />
-
         <hr />
         <div className={style.useStateHook}>
           <p>useState(название компонента в коде всегда с большой буквы)</p>
           <UseState1 />
         </div>
         <div className={style.useEffectHook}>
-        <p>useEffect</p>
+        <h2>useEffect</h2>
           <Task31 />
           <hr />
           <Task32 />
@@ -133,9 +134,7 @@ function App() {
         </div>
         <p>.</p>
         <div className={style.useRefHook}>
-        <p>useRef</p>
-        fgsdfgsdfkhsdkflsdfskdfkjsdfkjsdhfkjsdf
-        sdfbsdvfsdvfhsdvfvsdfvsdf
+        <h2>useRef</h2>
           <ExampleUseRef/>
           <UseRef1/>
           <UseRef2/>
@@ -143,14 +142,17 @@ function App() {
           <UseRef4/>
           <UseRef5/>
         </div>
-        <p>context</p>
-        <Task40 />
+        <div className={style.useMemoHook}>
+        <UseMemo1/>
+        <UseMemo2/>
+        </div>
         <hr />
+        <h2>context</h2>
         <ContextAuth />
         <hr />
         <Task52 />
         <hr />
-        <p>useCallback</p>
+        <h2>useCallback</h2>
         <Callback1 />
         <hr />
         <Callback2 />
