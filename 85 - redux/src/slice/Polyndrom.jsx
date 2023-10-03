@@ -7,14 +7,29 @@ import { createSlice } from "@reduxjs/toolkit";
 
 const polyndrome = createSlice({
   name: "polyndrome",
-  initialState: "",
+  initialState: {
+    input: "",
+    result: false,
+  },
   reducers: {
-    isPolyndrom: function (state, action) {
-      console.log(`параметр_1:${state}, параметр_2:${action.payload}`);
-      return action.payload;
+    fillInput: function (state, data) {
+      return { ...state, input: data.payload };
+    },
+    isPolyndrom: function (state) {
+      if (state.input == state.input.split(``).reverse().join(``)) {
+        return {
+          ...state,
+          result: true,
+        };
+      } else {
+        return {
+          ...state,
+          result: false,
+        };
+      }
     },
   },
 });
 
 export default polyndrome.reducer;
-export const { isPolyndrom } = polyndrome.actions;
+export const { fillInput, isPolyndrom } = polyndrome.actions;
