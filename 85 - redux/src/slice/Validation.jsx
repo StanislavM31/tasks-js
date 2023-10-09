@@ -13,7 +13,7 @@ const validation = createSlice({
         input: data.payload,
       };
     },
-    isValid: function (state, data) {
+    isValid: function (state) { //function (state, data)
       if (/^[a-z0-9]+@[a-z]+\.+[a-z]+$/gm.test(state.input)) {
         return {
           ...state,

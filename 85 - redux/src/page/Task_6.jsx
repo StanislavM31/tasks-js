@@ -2,7 +2,7 @@ import { useSelector, useDispatch } from "react-redux";
 import { fillInput, isValid } from "../slice/Validation";
 
 export default function Task_6() {
-  const data = useSelector((state) => state.validation);
+  const data = useSelector((state) => state.validation); //парамаетром принимает функцию которая принимает состояние (state)
   const dispatch = useDispatch();
 
   function callFillInput(event) {

@@ -5,6 +5,7 @@ import inputValue from "../slice/inputValue";
 import Polyndrom from "../slice/Polyndrom";
 import display from "../slice/displayText";
 import Validation  from "../slice/Validation";
+import inputCounter from "../slice/SumInputs"
 
 
 const store = configureStore({
@@ -14,7 +15,8 @@ const store = configureStore({
     inputValue:inputValue,
     polyndrom: Polyndrom,
     displayText: display,
-    validation: Validation
+    validation: Validation,
+    inputCounter: inputCounter,
   },
 });
 
