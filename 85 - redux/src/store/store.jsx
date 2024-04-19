@@ -13,6 +13,7 @@ const store = configureStore({
     counter: counter,
     counter_2: counter_2,
     inputValue:inputValue,
+    polyndrom: Polyndrom,
     displayText: display,
     validation: Validation,
     inputCounter: inputCounter,
