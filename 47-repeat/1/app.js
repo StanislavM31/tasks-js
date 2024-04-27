@@ -1,18 +1,20 @@
+
 /*
 1. Посчитать количество гласных и согласных в строке
 */
-let str = 'hello';
 
-function counter(string){
+let string = 'hello';
+
+function counter(str){
     let i =0;
-    for (const iterator of string) {
+    for (const iterator of str) {
 
         if(('aeiuo').includes(iterator)){
             i++;
         }
     }
     console.log('гласные:', i);
-    console.log('согласные:', str.length-i);
+    console.log('согласные:', string.length-i);
 }
 
 counter(str);
