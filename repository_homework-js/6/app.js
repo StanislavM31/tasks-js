@@ -1,14 +1,20 @@
-/*
-Найти квадратный корень числа. Если же число без плавающей точки, то просто
-вывести его. В противном случае необходимо округлить число до целых. Добавить
-проверку на ввод только чисел
+/* 
+6. Напишите функцию, которая принимает массив чисел и возвращает среднее значение всех 
+элементов.
+
 */
 
-let n = +prompt('введите число:');
-let x = Math.sqrt(n);
+const arr = [1,2,3,4,5,6,7,8,9,10];
 
-if(x%(Math.floor(x))==0){
-    console.log(`${x} целое число`)
-} else {
-    console.log(`${Math.floor(x)}`);
+function foo(array){
+    let result;
+    let sum=0;
+    for (let i = 0; i < array.length; i++) {
+        const element = array[i];
+        sum+=element;
+
+    }
+    console.log(sum/array.length); 
 }
+
+foo(arr);

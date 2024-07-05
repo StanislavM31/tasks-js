@@ -1,6 +1,22 @@
-/* Даны числа 4, -2, 5, 19, -130, 0, 10. Найдите минимальное и максимальное число.
-Предварительно изучите модуль Math и в отдельности Math.min и Math.max */
+/* 
+9. Напишите функцию, которая принимает число и возвращает true, если число является 
+простым, и false в противном случае.
 
+*/
 
-console.log(Math.max(4, -2, 5, 19, -130, 0, 10));
-console.log(Math.min(4, -2, 5, 19, -130, 0, 10));
+function foo(number) {
+    if (number <= 1) {
+      return false;
+    }
+  
+    for (let i = 2; i <= Math.sqrt(number); i++) {
+      if (number % i === 0) {
+        return false;
+      }
+    }
+  
+    return true;
+  }
+  
+  console.log(`число 7 простое? ${foo(7)}`);
+  console.log(`число 12 простое? ${foo(12)}`); 
