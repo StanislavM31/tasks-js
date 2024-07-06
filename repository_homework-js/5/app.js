@@ -3,9 +3,7 @@
 строки отсортированы по длине.
 */
 function foo(arr) {
-    return arr.slice().sort(function(a, b) {
-        return a.length - b.length;
-    });
+    return arr.slice().sort((a, b) => a.length - b.length);
 }
 
 const string = ["НАПИШИТЕ", "ФУНКЦИЮ,", "КОТОРАЯ", "ПРИНИМАЕТ", "СТРОКУ", "И", "ВОЗВРАЩАЕТ", "ЕЕ,", "НО", "ВСЕ", "БУКВЫ", "ПЕРЕВЕДЕНЫ", "В", "нижний", "РЕГИСТР"];
