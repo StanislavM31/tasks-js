@@ -17,7 +17,6 @@ function foo(arr) {
   return filtered;
 }
 
-// Пример использования:
 const strings = ['Apple', 'Banana', 'ABBA', 'Little', 'TYUI'];
 const result = foo(strings);
 console.log(result)
