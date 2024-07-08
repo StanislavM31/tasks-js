@@ -19,7 +19,6 @@ function findMin(arr) {
   return minValue;
 }
 
-// Пример использования:
 const numbers = [10, 5, 8, 3, 12, -2, 100];
 const result = findMin(numbers);
 console.log(result);
