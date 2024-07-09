@@ -1,15 +1,16 @@
 /* 
-10. Напишите функцию, которая принимает массив чисел и возвращает новый массив, 
-содержащий только четные числа
+50. Напишите функцию, которая принимает массив чисел и возвращает объект, где ключи - это
+числа, а значения - их квадраты.
 */
 
-const numbers = [1, 2, 3, 4, 5, 6, 7, 8, 9, 10];
-
 function foo(arr) {
-    return arr.filter(function(number) {
-      return number % 2 === 0;
-    });
-  }
-  
-  const result = foo(numbers);
-  console.log("только чётные числа из массива",result);
+  return arr.reduce(function(obj, num) {
+      obj[num] = num * num;
+      return obj;
+  }, {});
+}
+
+
+const array = [1, 2, 3, 4, 5];
+const result = foo(array);
+console.log(result);

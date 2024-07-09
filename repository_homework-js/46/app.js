@@ -1,20 +1,13 @@
 /* 
-6. Напишите функцию, которая принимает массив чисел и возвращает среднее значение всех 
-элементов.
-
+46. Напишите функцию, которая принимает массив чисел и возвращает новый массив, где 
+каждый элемент возведен в степень, равную его индексу
 */
 
-const arr = [1,2,3,4,5,6,7,8,9,10];
+function foo(arr) {
+    return arr.map((num, index) => Math.pow(num, index))
+    };
 
-function foo(array){
-    let result;
-    let sum=0;
-    for (let i = 0; i < array.length; i++) {
-        const element = array[i];
-        sum+=element;
 
-    }
-    console.log(sum/array.length); 
-}
-
-foo(arr);
+const numbers = [2, 3, 4, 5];
+const result = foo(numbers);
+console.log(result);
