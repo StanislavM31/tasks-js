@@ -17,16 +17,4 @@ let rectangle5 = new Rectangle5();
 rectangle5.height = 10;
 rectangle5.width = 5;
 console.log(rectangle5.getArea()); */
-class Rectangle5_1 {
-    width;
-    height;
-    constructor(width, height) {
-        this.width = width;
-        this.height = height;
-    }
-    getArea() {
-        return this.width * this.height;
-    }
-}
-let rectangle5_1 = new Rectangle5_1(12, 6);
-console.log(rectangle5_1.getArea());
+
