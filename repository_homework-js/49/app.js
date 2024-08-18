@@ -19,4 +19,12 @@ function foo(number) {
   }
   
   console.log(`число 7 простое? ${foo(7)}`);
-  console.log(`число 12 простое? ${foo(12)}`); 
+  console.log(`число 12 простое? ${foo(12)}`);
+  
+  let obj = {
+    a:1,
+    b:2,
+    c:3
+  }
+
+
