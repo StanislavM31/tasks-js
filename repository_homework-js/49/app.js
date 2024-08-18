@@ -1,30 +1,14 @@
 /* 
-9. Напишите функцию, которая принимает число и возвращает true, если число является 
-простым, и false в противном случае.
+49. Напишите функцию, которая принимает строку и возвращает новую строку, где каждое
+слово начинается с заглавной буквы.
 
 */
 
-function foo(number) {
-    if (number <= 1) {
-      return false;
-    }
-  
-    for (let i = 2; i <= Math.sqrt(number); i++) {
-      if (number % i === 0) {
-        return false;
-      }
-    }
-  
-    return true;
-  }
-  
-  console.log(`число 7 простое? ${foo(7)}`);
-  console.log(`число 12 простое? ${foo(12)}`);
-  
-  let obj = {
-    a:1,
-    b:2,
-    c:3
-  }
+function upper(str) {
+  return str.split(' ').map((word) => (word.charAt(0).toUpperCase() + word.slice(1).toLowerCase())).join(' ');
+}
 
 
+const string = "привет дорогой пользователь";
+const result = upper(string);
+console.log(result);

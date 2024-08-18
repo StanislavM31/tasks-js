@@ -1,16 +1,12 @@
 /* 
-7. Напишите функцию, которая принимает массив строк и возвращает массив только тех 
-строк, которые содержат больше пяти символов.
-
+47. Напишите функцию, которая принимает строку и возвращает новую строку, где все
+символы идут в обратном порядке
 */
 
-function foo(arr) {
-  let filtered = arr.filter((el) => 
-    el.length > 5
-  );
-  return filtered;
+function foo(str) {
+  return str.split('').reverse().join('');
 }
 
-let string = ["aaa", "bbbbb", "ccccccc", "d", "ffffff"];
-let result = foo(string);
-console.log("длина >5",result);
+const string = "Hello";
+const result = foo(string);
+console.log(result); 

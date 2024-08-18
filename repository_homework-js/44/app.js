@@ -15,7 +15,6 @@ function foo(arr) {
     return result;
   }
   
-  // Example usage:
   const array_of_strings = ["hello", "my", "dear", "friend"];
   const res = foo(array_of_strings);
   console.log(res);

@@ -3,11 +3,4 @@
 Инициализация свойств name, age происходит с помощью экземпляра класса.
 Создайте экземпляр класса Student и выведите их свойства.
 */
-class Student2 {
-    name;
-    age;
-}
-let student2 = new Student2();
-student2.name = " Hanna";
-student2.age = 25;
-console.log(student2);
+
