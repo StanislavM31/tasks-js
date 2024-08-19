@@ -3,29 +3,34 @@
 разность, произведение, частное. 2 числа передаются в класс, далее вызываеются
 соответствующие функции. Добавить проверки на ввод
 */
-
 class Calculator{
-    constructor(n1,n2){
-        this.num1=+n1;
-        this.num2=+n2;
+    constructor(x,y){
+        if(!x || !y) throw new Error('не ввели числа')
+        this.x = x;
+        this.y = y;
     }
 
-    sum(){
-        return `${this.num1}+${this.num2} = ${this.num1+ this.num2}`;
+    sum = () => {
+        console.log(this.x + this.y);
     }
-    dif(){
-        return `${this.num1}-${this.num2} = ${this.num1-this.num2}`;
+
+    subtract = () => {
+        console.log(this.x - this.y);
     }
-    mylti(){
-        return `${this.num1}-${this.num2} = ${this.num1*this.num2}`;
+
+    devide = () => {
+        console.log(this.x / this.y);
     }
-    divide(){
-        return `${this.num1}/${this.num2} = ${this.num1/this.num2}`;
+
+    mult = () => {
+        console.log(this.x * this.y);
     }
 }
 
-let calculator = new Calculator(100, 500);
-console.log(calculator.sum());
-console.log(calculator.dif());
-console.log(calculator.mylti());
-console.log(calculator.divide());
+let calc = new Calculator(10, 7);
+calc.sum();
+calc.subtract();
+calc.devide()
+calc.mult();
+
+

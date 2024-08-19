@@ -11,10 +11,11 @@ class Singer {
         this.surname = s;
     }
     getAutograph(){
-        return `${this.name} ${this.surname}, с наилучшими пожеланиями `
+        console.log(`${this.name} ${this.surname}, с наилучшими пожеланиями `); 
     }
 }
 
 
-
+let s = new Singer('Frenk', "Sinatra");
+s.getAutograph()
 

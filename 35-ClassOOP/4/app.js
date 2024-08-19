@@ -5,29 +5,27 @@
 массива. Добавить проверки на ввод
 */
 
-class MathСalculation{
-    constructor(n){
+class MathCalculation {
+    constructor(n) {
         this.n = n;
-        this.arr = this.createArray(n);
-        this.filtered = this.filterArray(this.arr)
+        this.array = this.generateArray(n);
     }
-    createArray(length){
-        const array = [];
-        for (let i = 0; i < length; i++) {
-            array.push(Math.floor(Math.random()*100)) ;
+
+
+    generateArray(n) {
+        const arr = [];
+        for (let i = 0; i < n; i++) {
+            arr.push(Math.floor(Math.random() * 10))
         }
-        return array;
+        return arr;
     }
-    filterArray(array1){
-        let filtered = array1.filter(el=>{
-            if(el%2==0){
-                return el;
-            }
-        })``
-        return filtered.reduce((a,b)=>a+b);
+
+    sumElement() {
+        return this.array.filter(num => num % 2 === 0).length;
     }
 }
 
-let mathСalculation = new MathСalculation(5);
-console.log(mathСalculation);
-console.log(mathСalculation.filtered);
+// Пример использования
+const mathCalc = new MathCalculation(10);
+console.log("Массив:", mathCalc.array);
+console.log("Количество четных чисел:", mathCalc.sumElement());
