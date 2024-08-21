@@ -12,21 +12,4 @@ repository – функция, симулирующая БД. Хранит ма�
 Необходимо вывести в консоль весь массив
 */
 
-class ServerGetAll {
-  controller() {
-    let controller = this.service();
-    return controller;
-  }
-  service() {
-    let srv = this.repository();
-    srv = JSON.parse(srv);
-    return srv;
-  }
-  repository() {
-    let repo = `{"id":"javascript", "label":"JavaScript", "category": "programmingLanguages","priority": 1}`;
-    return repo;
-  }
-}
-
-let serverGetAll = new ServerGetAll();
-console.log(serverGetAll.controller());
+c

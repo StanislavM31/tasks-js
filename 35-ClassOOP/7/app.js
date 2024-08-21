@@ -24,27 +24,4 @@ repository – функция, симулирующая БД. Хранит ма�
 { "id": "sql", "label": "SQL", "category": "programmingLanguages", "priority": 2 },
 { "id": "java", "label": "Java", "category": "programmingLanguages", "priority": 3 },
 { "id": "go", "label": "GO", "category": "programmingLanguages", "priority": 3 }, */
-class ServerById{
-  middleware(){
-    const middleware = this.controller();
-    return middleware;
-  }
-  controller(){
-    const controller = this.service();
-    return controller;
-  }
-  service(){
-    const repository = this.repository();
-    return repository;
-  }
-  repository(){
-    let string = `{
-      "id": "javascript", "label": "JavaScript", "category": "programmingLanguages", "priority": 1
-      }`;
-
-    return JSON.parse(string);
-  }
-}
-
-const serverById = new ServerById();
-console.log(serverById.controller());
+c
