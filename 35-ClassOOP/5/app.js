@@ -4,3 +4,49 @@
 если слова являются анаграммами. Добавить проверки на ввод.
 */
 
+class Anagramm {
+  constructor(string) {
+  }
+
+  reversedString() {
+    try {
+        
+        console.log((this.string).split("").reverse().join("") == this.string);
+    } catch (error) {
+        console.log(error.messsage());
+        
+    }
+  }
+}
+
+let anagram = new Anagramm("ffflll");
+anagram.reversedString()
+
+
+/* class Anagram{
+  constructor(word){
+    this.word = word;
+  }
+}
+class Check{
+  isAnagram(w){
+    try{
+      if(!w.length){
+        throw new Error('пустая строка')
+      }
+      if(w.split('').reverse().join('')==w){
+        return true
+      } else {
+        return false;
+      }
+    } catch(error){
+      alert(error.message);
+      return ['здесь ничего нет']
+    }
+  }
+}
+let word = prompt('enter the anagram');
+let anagram = new Anagram(word);
+console.log(anagram);
+let check = new Check()
+console.log(check.isAnagram(anagram.word)); */
