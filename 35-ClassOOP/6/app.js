@@ -13,18 +13,19 @@ repository – функция, симулирующая БД. Хранит ма�
 */
 
 class ServerGetAll{
-    data = ['data'];
+    data;
 
-    controller(){
+    controller(d){
         
-        return this.service()
+        return this.service(d)
         
     }
-    service(){
-        return this.repository()
+    service(d){
+        return this.repository(d)
     }
-    repository(){
-        return this.data;
+    repository(d){
+      this.data = d;
+        return this.data + " на сервере";
     }
 
     /*     controller(json){
@@ -42,5 +43,5 @@ class ServerGetAll{
 
 let serverGetAll = new ServerGetAll();
 
-data = serverGetAll.controller("данные на сервере");
+data = serverGetAll.controller("данные");
 console.log(data);
