@@ -11,3 +11,36 @@ repository – функция, симулирующая БД. Хранит ма�
 Задание:
 Необходимо вывести в консоль весь массив
 */
+
+class ServerGetAll{
+    data = ['data'];
+
+    controller(){
+        
+        return this.service()
+        
+    }
+    service(){
+        return this.repository()
+    }
+    repository(){
+        return this.data;
+    }
+
+    /*     controller(json){
+        if(!json.length) throw new Error('нет вводных данных');
+        this.service(json)
+    }
+    service(json){
+        this.repository(json)
+    }
+    repository(){
+        this.data = json;
+        return this.data;
+    } */
+}
+
+let serverGetAll = new ServerGetAll();
+
+data = serverGetAll.controller("данные на сервере");
+console.log(data);

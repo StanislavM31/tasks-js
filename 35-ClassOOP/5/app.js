@@ -5,23 +5,26 @@
 */
 
 class Anagramm {
-  constructor(string) {
+  constructor(str) {
+    this.string = str;
   }
 
   reversedString() {
     try {
-        
-        console.log((this.string).split("").reverse().join("") == this.string);
-    } catch (error) {
-        console.log(error.messsage());
-        
+      if (this.string) {
+        if (typeof this.string === "number") {
+          this.string = (this.string).toString();
+        } //this.string = this.string.toString();
+        console.log((this.string).split("").reverse().join("") === this.string);
+      } else throw new Error("вы ничего не ввели");
+    } catch (e) {
+      console.log(e.message);
     }
   }
 }
 
-let anagram = new Anagramm("ffflll");
-anagram.reversedString()
-
+let anagram = new Anagramm(12345);
+anagram.reversedString();
 
 /* class Anagram{
   constructor(word){
