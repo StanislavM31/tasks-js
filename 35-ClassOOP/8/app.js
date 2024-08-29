@@ -4,3 +4,12 @@
 - возвращает true, если не является - то false
 */
 let r = /^([a-z0-9_-]+\.)*[a-z0-9_-]+@[a-z0-9_-]+(\.[a-z0-9_-]+)*\.[a-z]{2,6}$/gm;
+
+class Validator {
+    isMail(string){
+        return RegExp((string)./^([a-z0-9_-]+\.)*[a-z0-9_-]+@[a-z0-9_-]+(\.[a-z0-9_-]+)*\.[a-z]{2,6}$/gm);
+    }
+}
+let valid = new Validator("mail@mail.ru");
+
+console.log(valid);
