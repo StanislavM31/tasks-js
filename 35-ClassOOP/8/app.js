@@ -16,7 +16,7 @@ let r = /^([a-z0-9_-]+\.)*[a-z0-9_-]+@[a-z0-9_-]+(\.[a-z0-9_-]+)*\.[a-z]{2,6}$/g
 
 class Validator {
     isMail(string){
-        return RegExp((string)./^([a-z0-9_-]+\.)*[a-z0-9_-]+@[a-z0-9_-]+(\.[a-z0-9_-]+)*\.[a-z]{2,6}$/gm);
+        return RegExp(1);
     }
 }
 let valid = new Validator("mail@mail.ru");
