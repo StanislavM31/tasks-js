@@ -82,9 +82,9 @@ class CommonPrefix {
         console.log('final=>', longest);
         
     } */
-   
-                                                    /* ============================================================================== */
-   /*      let prefix = this.array[0];//flower
+
+    /* ============================================================================== */
+    /*      let prefix = this.array[0];//flower
    let result = "";
    for (let i = 0; i < this.array.length; i++) {
     
@@ -93,22 +93,32 @@ class CommonPrefix {
 } else break;
 }
 console.log(result);  */
-                                                    /* ============================================================================== */
+    /* ============================================================================== */
 
-const minSize = Math.min(...this.array.map((el)=>el.length));
-let pref = '';
+    const minSize = Math.min(...this.array.map((el) => el.length));
+    let pref = "";
     for (let i = 0; i < minSize; i++) {
-        const letter = this.array[0][i];
-        console.log(letter);
-        
-        if(!this.array.every((item)=> item[i] === letter)) break;
-        pref += letter;
+      const letter = this.array[0][i];
+      console.log(letter);
+
+      if (!this.array.every((item) => item[i] === letter)) break;
+      pref += letter;
     }
     console.log(pref);
-    
   }
 }
-let prefix = new CommonPrefix(["flower", "flow", "flight", "flight", "fleght", "fpight", "light", "superflight", "fl", "f"]);
+let prefix = new CommonPrefix([
+  "flower",
+  "flow",
+  "flight",
+  "flight",
+  "fleght",
+  "fpight",
+  "light",
+  "superflight",
+  "fl",
+  "f",
+]);
 prefix.findLongestPrefix();
 
 /* 4. Создайте класс TwoSum, который будет принимать массив целых чисел nums и целое число target.
@@ -125,16 +135,48 @@ target. Гарантируется, что существует ровно од�
 Входные: new TwoSum([3, 2, 4], 6)→ Результат: [1, 2]
  */
 class TwoSum {
-  constructor(a,t){
-    this.array =a;
-    this.target =t;
+  constructor(a, t) {
+    this.array = a;
+    this.target = t;
   }
-  findIncludes(){
-    let min = Math.min(this.array)
-    let max = Math.max(this.array)
-    return min+max+this.target
+  findIncludes() {
+
+    let result = [];
+
+    for (let el in this.array) {
+      const a = this.array[el]
+      for (let i = 0; i < this.array.length; i++) {
+        const element = this.array[i];
+        console.log(`el: ${a} + elemet ${element}`);
+        if(el==i) break;
+        if(a+element === this.target){
+          result.push(el*1);
+          result.push(i);
+        }
+      }
+    }
+    console.log(result);
   }
 }
 
-let twoSum = new TwoSum([3, 2, 4], 6)
-console.log(twoSum.);
+let twoSum = new TwoSum([2, 7, 11, 15], 9);
+twoSum.findIncludes();
+
+/* 5. Создайте родительский класс Number, который будет хранить число. Затем создайте дочерний
+класс PalindromeChecker, который будет проверять, является ли это число палиндромом.
+Входные: new PalindromeChecker(-121) → Результат: false
+Входные: new PalindromeChecker(10) → Результат: false
+Входные: new PalindromeChecker(12321) → Результат: true
+ */
+
+class Number {
+  constructor(num){
+    this.num = num;
+
+  }
+  PalindromeChecker(){
+    console.log(this.num == ((this.num)+"".split('').reverse().join('')));
+  }
+}
+let number = new Number(12321);
+number.PalindromeChecker();
