@@ -82,17 +82,21 @@ class CommonPrefix {
         console.log('final=>', longest);
         
     } */
-    /* let prefix = this.array[0];//flower
-    let result = "";
-    for (let i = 0; i < this.array.length; i++) {
+   
+                                                    /* ============================================================================== */
+   /*      let prefix = this.array[0];//flower
+   let result = "";
+   for (let i = 0; i < this.array.length; i++) {
+    
+   if (prefix[i] == this.array[i][i]) {
+    result += prefix[i];
+} else break;
+}
+console.log(result);  */
+                                                    /* ============================================================================== */
 
-      if (prefix[i] == this.array[i][i]) {
-        result += prefix[i];
-      }
-    }
-    console.log(result); */
-    const minSize = Math.min(...this.array.map((el)=>el.length));
-    let pref = '';
+const minSize = Math.min(...this.array.map((el)=>el.length));
+let pref = '';
     for (let i = 0; i < minSize; i++) {
         const letter = this.array[0][i];
         console.log(letter);
@@ -104,7 +108,7 @@ class CommonPrefix {
     
   }
 }
-let prefix = new CommonPrefix(["flower", "flow", "flight"]);
+let prefix = new CommonPrefix(["flower", "flow", "flight", "flight", "fleght", "fpight", "light", "superflight", "fl", "f"]);
 prefix.findLongestPrefix();
 
 /* 4. Создайте класс TwoSum, который будет принимать массив целых чисел nums и целое число target.
