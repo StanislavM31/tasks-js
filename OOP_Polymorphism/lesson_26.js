@@ -124,3 +124,17 @@ target. Гарантируется, что существует ровно од�
 Входные: new TwoSum([3, 2, 4], 6)→ Результат: [1, 2]
 Входные: new TwoSum([3, 2, 4], 6)→ Результат: [1, 2]
  */
+class TwoSum {
+  constructor(a,t){
+    this.array =a;
+    this.target =t;
+  }
+  findIncludes(){
+    let min = Math.min(this.array)
+    let max = Math.max(this.array)
+    return min+max+this.target
+  }
+}
+
+let twoSum = new TwoSum([3, 2, 4], 6)
+console.log(twoSum.);
