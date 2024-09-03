@@ -212,8 +212,8 @@ SquareRootCalculator, который переопределяет метод gen
 
 class NumberGenerator{
   generateNumber(){
-    let n = Math.random()*10;
-    console.log("thi is generateNumber method");
+    let n = Math.floor(Math.random()*37);
+    console.log(`this is generated num: ${n}`);
     return n;
   }
 }
@@ -221,8 +221,17 @@ class NumberGenerator{
 class SquareRootCalculator extends NumberGenerator{
    generateNumber(){
     let num = super.generateNumber();
-
+    for (let i = 1; i <= num/2; i++) {
+      if (i * i === num){
+        console.log(`the root is ${i}`);
+        return i;
+      } else {
+        console.log(`попробовали ${i}`);
+      }
+      
+    }
+    console.log('no root');
   }
 }
 
-let n = new SquareRootCalculator.generateNumber();
+let n = new SquareRootCalculator().generateNumber();
