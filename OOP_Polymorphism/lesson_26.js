@@ -260,3 +260,44 @@ class EvenNumberFilter extends NumberArrayGenerator {
 const evenFilter = new EvenNumberFilter();
 const result = evenFilter.generateArray();
 console.log(result);
+/* 
+9. Создайте родительский класс RandomNumberArrayGenerator, который будет генерировать массив
+случайных чисел с помощью метода generateArray(). Затем создайте дочерний класс MultipleFilter,
+который переопределяет метод generateArray() и оставляет в массиве только те числа, которые
+кратны 3 или 7.
+Входные: new MultipleFilter().generateArray() → Результат: [21, 14, 9] (может быть другим, так как числа
+случайные)
+Входные: new RandomNumberArrayGenerator().generateArray() → Результат: [13, 21, 8, 9, 14, 27] (может быть
+другим, так как числа случайные)
+*/
+class RandomNumberArrayGenerator {
+  generateArray() {
+      let numbers = [];
+      for (let i = 0; i < 6; i++) {
+          numbers.push(Math.floor(Math.random() * 22));
+      }
+      return numbers;
+  }
+}
+
+class MultipleFilter extends RandomNumberArrayGenerator {
+  generateArray() {
+      let numbers = super.generateArray();
+      let filteredNumbers = [];
+
+      for (let number of numbers) {
+          if (number % 3 === 0 || number % 7 === 0) {
+              filteredNumbers.push(number);
+          }
+      }
+      return filteredNumbers;
+  }
+}
+
+const randomGenerator = new RandomNumberArrayGenerator();
+const randomResult = randomGenerator.generateArray();
+console.log(`массив из 6 случайных чисел ${randomResult}`);
+
+const multipleFilter = new MultipleFilter();
+const filteredResult = multipleFilter.generateArray();
+console.log(`числа, кратные 3 или 7${filteredResult}`);
