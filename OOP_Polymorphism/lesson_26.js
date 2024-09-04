@@ -235,3 +235,28 @@ class SquareRootCalculator extends NumberGenerator{
 }
 
 let n = new SquareRootCalculator().generateNumber();
+/* 8. Создайте родительский класс NumberArrayGenerator, который будет генерировать массив чисел
+от 1 до 8 с помощью метода generateArray(). Затем создайте дочерний класс EvenNumberFilter,
+который переопределяет метод generateArray() и оставляет в массиве только чётные числа.
+Входные: new EvenNumberFilter().generateArray() → Результат: [2, 4, 6, 8] */
+
+class NumberArrayGenerator {
+  generateArray() {
+      const numbers = [];
+      for (let i = 0; i < 10; i++) {
+          numbers.push(Math.floor(Math.random() * 9));
+      }
+      return numbers;
+  }
+}
+
+class EvenNumberFilter extends NumberArrayGenerator {
+  generateArray() {
+      const numbers = super.generateArray();
+      return numbers.filter(number => number % 2 === 0);
+  }
+}
+
+const evenFilter = new EvenNumberFilter();
+const result = evenFilter.generateArray();
+console.log(result);
